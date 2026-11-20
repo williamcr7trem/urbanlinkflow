@@ -18,13 +18,13 @@ Plataforma web para gestão de entregas urbanas, com front-end HTML/CSS/JavaScri
 5. Ajuste os campos `DB_*` para seu MySQL e configure `JWT_SECRET` com ao menos 24 caracteres aleatórios e `ADMIN_INVITE_CODE` privado com pelo menos 12 caracteres. Os valores ilustrativos do `.env.example` são rejeitados. Para instalações novas, `npm run configurar` pode gerar os segredos sem sobrescrever um `.env` existente. `npm run verificar-config` valida a configuração.
 6. Para localizar endereços por rua/número, configure no `.env`:
 
-   ```env
+   `env
    GEOCODING_ENABLED=true
    GEOCODING_PROVIDER=nominatim
    GEOCODING_CONTACT_EMAIL=contato-valido@exemplo.com
    GEOCODING_API_KEY=
 
-```
+`
 
 Use seu e-mail de contato e confira `docs/LOCALIZACAO_AUTOMATICA.md`. O Nominatim público é adequado apenas para baixo volume e exige respeito à política de utilização; em produção configure provedor apropriado. A busca depende de internet e pode não encontrar todos os endereços.
 
