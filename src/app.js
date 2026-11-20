@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('mysql2');
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
@@ -120,4 +121,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { app, iniciarServidor };
+module.exports = app;
