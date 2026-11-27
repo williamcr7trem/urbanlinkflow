@@ -7,6 +7,10 @@ const vm = require('node:vm');
 
 const html = fs.readFileSync(path.join(__dirname, '../public/entrega-motorista.html'), 'utf8');
 const script = fs.readFileSync(path.join(__dirname, '../public/js/app.js'), 'utf8');
+const locations = fs.readFileSync(path.join(__dirname, '../public/js/br-locations.js'), 'utf8');
+const stateStart = script.indexOf('  function configurarEstadosECidades(form, config) {');
+const stateEnd = script.indexOf('  function statusBadge(status) {', stateStart);
+assert.ok(stateStart >= 0 && stateEnd > stateStart);
 const helperStart = script.indexOf('  function configurarLocalizacaoDestino(form, campos) {');
 const helperEnd = script.indexOf('  async function customerDeliveryPage(user) {', helperStart);
 const start = script.indexOf('  async function manageDeliveriesPage(user) {');
@@ -29,10 +33,14 @@ class Elemento {
     this.hidden = false;
     this.classList = { toggle: () => {} };
   }
+  set innerHTML(value) { this.children = []; this.value = ''; this.placeholder = value; }
   append(...elements) { this.children.push(...elements); }
   replaceChildren(...elements) { this.children = elements; }
   setAttribute(key, value) { this.attributes[key] = value; }
-  addEventListener(event, cb) { this.listeners[event] = cb; }
+  addEventListener(event, cb) {
+    const anterior = this.listeners[event];
+    this.listeners[event] = anterior ? (...args) => { anterior(...args); return cb(...args); } : cb;
+  }
   focus() { this.focused = true; }
   reset() { this.value = ''; }
 }
@@ -74,6 +82,7 @@ function ambiente(cenario = {}) {
     el,
     statusBadge: value => new Elemento('span', 'badge-status', value),
     val: (id) => get(`#${id}`).value,
+    num: (id) => get(`#${id}`).value === '' ? null : Number(get(`#${id}`).value),
     fillSelect: (select, items, placeholder) => {
       select.entries = items.map(x => x.id);
       select.placeholder = placeholder;
@@ -88,6 +97,7 @@ function ambiente(cenario = {}) {
     },
     request: async (endpoint, options) => {
       sent.push({ endpoint, options });
+      if (endpoint === '/geocodificar') return { localizacao: { latitude: -22.9, longitude: -43.2, status: 'encontrado' } };
       if (cenario.fail) throw new Error('Veículo indisponível no servidor');
       return { entrega: { ...pedido, motorista_id: options.body.motorista_id, veiculo_id: options.body.veiculo_id, status: 'Aguardando coleta', motorista: { nome: 'Motorista A' } } };
     },
@@ -96,9 +106,9 @@ function ambiente(cenario = {}) {
     motoristaDeliveriesPage: () => {},
     setTimeout: () => {},
     window: { location: { reload() {} } },
-    document: { addEventListener: () => {} }
+    document: { addEventListener: () => {}, createElement: tag => new Elemento(tag) }
   };
-  vm.runInNewContext(script.slice(helperStart, helperEnd) + script.slice(start, end) + '\nglobalThis.testarGestao = manageDeliveriesPage;', ctx);
+  vm.runInNewContext(locations + script.slice(stateStart, stateEnd) + script.slice(helperStart, helperEnd) + script.slice(start, end) + '\nglobalThis.testarGestao = manageDeliveriesPage;', ctx);
   return {
     inicializar: () => ctx.testarGestao({ perfil: 'Administrador' }),
     get,
@@ -177,4 +187,53 @@ test('pedidos atribuídos ou finalizados não exibem botão de atribuição', as
     await ui.inicializar();
     assert.equal(procurar(ui.linhas()[0], 'botao-atribuir-motorista'), null);
   }
+});
+
+
+test('seletor de UF lista as 27 unidades e atualiza cidades do RJ', async () => {
+  const ui = ambiente();
+  await ui.inicializar();
+  const uf = ui.get('#admin-uf'), cidade = ui.get('#admin-cidade');
+  assert.equal(uf.children.length, 27);
+  assert.equal(cidade.disabled, true);
+  uf.value = 'RJ'; uf.listeners.change();
+  assert.equal(cidade.disabled, false);
+  for (const nome of ['Cabo Frio','Belford Roxo','Saquarema','Rio de Janeiro']) {
+    assert.ok(cidade.children.some(option => option.value === nome), nome);
+  }
+  uf.value = 'SP'; uf.listeners.change();
+  assert.ok(cidade.children.some(option => option.value === 'São Paulo'));
+  assert.ok(!cidade.children.some(option => option.value === 'Cabo Frio'));
+});
+
+test('nova entrega abre o modal correto e localizar endereço não o fecha', async () => {
+  const ui = ambiente();
+  await ui.inicializar();
+  ui.get('#abrir-nova-entrega').listeners.click();
+  assert.equal(ui.get('#modalNovaEntrega').style.display, 'flex');
+  assert.notEqual(ui.get('#modalAtribuirEntrega').style.display, 'flex');
+  await ui.get('#admin-verificar-endereco').listeners.click();
+  assert.equal(ui.get('#modalNovaEntrega').style.display, 'flex');
+  assert.equal(ui.sent[0].endpoint, '/geocodificar');
+  ui.get('#cancelar-nova-entrega').listeners.click();
+  assert.equal(ui.get('#modalNovaEntrega').style.display, 'none');
+});
+
+test('gestão exige e envia peso e volume em entregas de van', async () => {
+  const ui = ambiente();
+  await ui.inicializar();
+  ui.get('#admin-cliente').value = '20';
+  ui.get('#admin-tipo-veiculo').value = 'Van';
+  ui.get('#admin-destino').value = 'Rua teste, 20';
+  const submit = () => ui.get('#form-admin-entrega').listeners.submit({ preventDefault() {} });
+  await submit();
+  assert.equal(ui.sent.length, 0);
+  assert.ok(ui.notices.some(n => /peso e o volume/.test(n.value)));
+  ui.get('#admin-peso-kg').value = '35';
+  ui.get('#admin-volume-m3').value = '1.5';
+  await submit();
+  assert.equal(ui.sent.length, 1);
+  assert.equal(ui.sent[0].endpoint, '/entregas');
+  assert.equal(ui.sent[0].options.body.peso_kg, 35);
+  assert.equal(ui.sent[0].options.body.volume_m3, 1.5);
 });

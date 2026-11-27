@@ -87,6 +87,44 @@
     const v = val(id);
     return v === '' ? null : Number(v);
   }
+
+  function configurarEstadosECidades(form, config) {
+    const source = window.BR_LOCATIONS;
+    if (!form || !source || !source.states || !source.cities) return;
+    const stateSelect = $(`#${config.stateId}`, form);
+    const citySelect = $(`#${config.cityId}`, form);
+    if (!stateSelect || !citySelect) return;
+
+    const currentState = stateSelect.value || config.defaultState || '';
+    const currentCity = citySelect.value || config.defaultCity || '';
+    const states = Object.entries(source.states).sort((a, b) => a[1].localeCompare(b[1], 'pt-BR'));
+
+    stateSelect.innerHTML = '<option value="">Selecione o estado</option>';
+    states.forEach(([uf, nome]) => {
+      const option = document.createElement('option');
+      option.value = uf;
+      option.textContent = `${nome} (${uf})`;
+      if (uf === currentState) option.selected = true;
+      stateSelect.append(option);
+    });
+
+    const fillCities = (uf, selected = '') => {
+      const cities = Array.isArray(source.cities[uf]) ? source.cities[uf].slice().sort((a, b) => a.localeCompare(b, 'pt-BR')) : [];
+      citySelect.innerHTML = `<option value="">${uf ? 'Selecione a cidade' : 'Escolha primeiro o estado'}</option>`;
+      citySelect.disabled = !uf;
+      cities.forEach(nome => {
+        const option = document.createElement('option');
+        option.value = nome;
+        option.textContent = nome;
+        if (nome === selected) option.selected = true;
+        citySelect.append(option);
+      });
+    };
+
+    fillCities(currentState, currentCity);
+    stateSelect.addEventListener('change', () => fillCities(stateSelect.value, ''));
+  }
+
   function statusBadge(status) {
     const badge = el('span', 'badge-status', status || '—');
     badge.dataset.status = status || '';
@@ -179,11 +217,6 @@
         nav.append(link);
       });
     });
-  }
-
-  // Remove a preferência obsoleta do navegador; o site usa somente o tema claro.
-  function clearLegacyThemePreference() {
-    try { localStorage.removeItem('urbanlink_tema'); sessionStorage.removeItem('urbanlink_tema'); document.documentElement.removeAttribute('data-theme'); } catch (_) { /* Armazenamento indisponível. */ }
   }
 
   function setupProfileLogout() {
@@ -556,7 +589,8 @@
       }
     };
     [campos.destino, campos.bairro, campos.cidade, campos.uf, campos.cep].filter(Boolean).forEach(id => {
-      $(`#${id}`, form)?.addEventListener('input', () => {
+      const field = $(`#${id}`, form);
+      const resetLocation = () => {
         if (preenchidoAutomaticamente) {
           if (latitude) latitude.value = '';
           if (longitude) longitude.value = '';
@@ -564,7 +598,9 @@
         }
         if (mapa) mapa.hidden = true;
         avisar('O endereço foi alterado. A localização será atualizada ao enviar a entrega.');
-      });
+      };
+      field?.addEventListener('input', resetLocation);
+      field?.addEventListener('change', resetLocation);
     });
     [latitude, longitude].forEach(input => input?.addEventListener('input', () => {
       preenchidoAutomaticamente = false;
@@ -610,6 +646,7 @@
   async function customerDeliveryPage(user) {
     const form = $('#form-nova-entrega');
     if (!form) return;
+    configurarEstadosECidades(form, { stateId: 'uf', cityId: 'cidade' });
     configurarLocalizacaoDestino(form, { botao: 'cliente-verificar-endereco', aviso: 'cliente-geo-feedback', mapa: 'cliente-geo-preview', destino: 'destino', bairro: 'bairro', cidade: 'cidade', uf: 'uf', cep: 'cep_entrega', latitude: 'destino-latitude', longitude: 'destino-longitude' });
     const vehicleButtons = $$('.botao-seletor', form);
     let chosenVehicle = $('.botao-seletor.ativo', form)?.dataset.veiculo || 'Moto';
@@ -1279,11 +1316,13 @@
       $$('.abas-status .aba').forEach(t=>{t.classList.toggle('ativa',t===tab);t.setAttribute('aria-pressed',String(t===tab));});
       render(tab.dataset.filtro||'todos');
     }));
-    $('#abrir-nova-entrega')?.addEventListener('click',()=>{const modal=$('.overlay-modal');if(modal)modal.style.display='flex';});
-    const closeModal=()=>{const modal=$('.overlay-modal');if(modal)modal.style.display='none';};
-    $('.fechar-modal')?.addEventListener('click',closeModal);
-    $('button[type="button"]',form)?.addEventListener('click',closeModal);
+    const modalNovaEntrega=$('#modalNovaEntrega');
+    $('#abrir-nova-entrega')?.addEventListener('click',()=>{if(modalNovaEntrega)modalNovaEntrega.style.display='flex';});
+    const closeModal=()=>{if(modalNovaEntrega)modalNovaEntrega.style.display='none';};
+    $('#fechar-nova-entrega')?.addEventListener('click',closeModal);
+    $('#cancelar-nova-entrega')?.addEventListener('click',closeModal);
     if(form){
+      configurarEstadosECidades(form, { stateId: 'admin-uf', cityId: 'admin-cidade' });
       configurarLocalizacaoDestino(form, { botao: 'admin-verificar-endereco', aviso: 'admin-geo-feedback', mapa: 'admin-geo-preview', destino: 'admin-destino', cidade: 'admin-cidade', uf: 'admin-uf', cep: 'admin-cep', latitude: 'admin-latitude', longitude: 'admin-longitude' });
       form.addEventListener('submit',async e=>{
         e.preventDefault();
@@ -1297,10 +1336,15 @@
           janela_fim:val('admin-janela-fim'),
           observacoes:val('admin-observacoes'),
           tipo_veiculo:val('admin-tipo-veiculo'),
+          peso_kg:num('admin-peso-kg'),
+          volume_m3:num('admin-volume-m3'),
           destino_latitude:num('admin-latitude'),
           destino_longitude:num('admin-longitude'),
           tipo_carga:'Volumes gerais'
         };
+        if (['Van', 'Caminhão'].includes(body.tipo_veiculo) && (!(body.peso_kg > 0) || !(body.volume_m3 > 0))) {
+          message('Para Van e Caminhão, informe o peso e o volume da carga.','erro',form);return;
+        }
         if(Boolean(driverSelect?.value)!==Boolean(vehicleSelect?.value)){
           message('Selecione motorista e veículo juntos, ou deixe os dois como “Atribuir depois”.','erro',form);return;
         }
@@ -1912,7 +1956,6 @@
   }
 
   async function init() {
-    clearLegacyThemePreference();
     setupProfileLogout();
     ensureGlobalFooter();
     enablePageTransitions();

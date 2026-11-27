@@ -50,3 +50,61 @@
 .mapa-resumo{margin:0;padding:14px 12px;border:1px solid #e6ecf4;background:#f8fbff;border-radius:18px}
 .mapa-legenda{margin:14px 0 0}.mapa-delivery-list{max-height:26vh;border-top:0}.mapa-list-heading{margin:0 0 10px}.mapa-actions{margin-top:0}.mapa-toolbar{padding:14px 18px;border-radius:16px}.mapa-toolbar-actions{flex-wrap:wrap}.mapa-tool-button{min-height:40px;padding:9px 13px;border-radius:10px}
 @media(max-width:850px){.mapa-sidebar{gap:14px}.mapa-group-card,.mapa-workflow-card{padding:16px}.mapa-delivery-list{max-height:220px}}
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+:where(html[data-theme="dark"]) .mapa-layout{background:#1a2436}
+:where(html[data-theme="dark"]) .mapa-sidebar{background:#1a2436;border-right:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mapa-sidebar h1{color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-sidebar p,:where(html[data-theme="dark"]) .mapa-disclaimer{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-eyebrow{color:#f59280}
+:where(html[data-theme="dark"]) .mapa-resumo{background:#1a2436}
+:where(html[data-theme="dark"]) .mapa-resumo span{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-resumo strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-label{color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-input{border:1px solid #3b4a66;background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-legenda{color:#bdc9de}
+:where(html[data-theme="dark"]) .dot-delivery{background:#ce2b0d}
+:where(html[data-theme="dark"]) .dot-vehicle{background:#236ab8}
+:where(html[data-theme="dark"]) .mapa-list-heading h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-link-button{color:#f59280}
+:where(html[data-theme="dark"]) .mapa-delivery-list{border-top:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mapa-delivery-item{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mapa-delivery-item:hover,:where(html[data-theme="dark"]) .mapa-delivery-item.selected{background:#3e2119}
+:where(html[data-theme="dark"]) .mapa-delivery-item strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-delivery-item small{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-delivery-item .mapa-status{color:#f59280}
+:where(html[data-theme="dark"]) .mapa-empty{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-button-primary{background:#ce2b0d}
+:where(html[data-theme="dark"]) .mapa-button-light{background:#131b2b;color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-button-outline{background:#1a2436;border:1px solid #3b4a66;color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-toolbar{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mapa-toolbar strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-toolbar small{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-tool-button{background:#1a2436;border:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-feedback{color:#bdc9de}
+:where(html[data-theme="dark"]) .urbanlink-pin{border:3px solid #3b4a66}
+:where(html[data-theme="dark"]) .pin-delivery{background:#ce2b0d}
+:where(html[data-theme="dark"]) .pin-vehicle{background:#236ab8}
+:where(html[data-theme="dark"]) .leaflet-popup-content strong{color:#e8edfa}
+@media(max-width:850px){
+:where(html[data-theme="dark"]) .mapa-sidebar{border-bottom:1px solid #3b4a66}
+}
+:where(html[data-theme="dark"]) .mapa-position-status{background:#3e2319;color:#dfa195}
+:where(html[data-theme="dark"]) .mapa-delivery-row{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mapa-navigate-link{background:#3e2119;color:#e99a8b}
+:where(html[data-theme="dark"]) .mapa-navigate-link:hover{background:#ce2b0d}
+:where(html[data-theme="dark"]) .mapa-button-primary:hover{background:#be361e}
+:where(html[data-theme="dark"]) .mapa-button-light:hover,:where(html[data-theme="dark"]) .mapa-button-outline:hover,:where(html[data-theme="dark"]) .mapa-tool-button:hover{background:#3e2119;color:#f29383}
+:where(html[data-theme="dark"]) .mapa-help{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-delivery-row.is-selected{background:#3e2419;border-color:#93331f}
+:where(html[data-theme="dark"]) .mapa-delivery-row:focus-within{outline:2px solid #93331f}
+:where(html[data-theme="dark"]) .mapa-input:focus-visible{border-color:#93331f!important;outline:3px solid #93351f!important}
+:where(html[data-theme="dark"]) .mapa-feedback{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-group-card,:where(html[data-theme="dark"]) .mapa-workflow-card{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mapa-group-header h2,:where(html[data-theme="dark"]) .mapa-workflow-card h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-group-header span,:where(html[data-theme="dark"]) .mapa-workflow-card p{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-steps li{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-steps strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-steps span{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-resumo{border:1px solid #3b4a66;background:#1a2436}

@@ -2,6 +2,7 @@ require('dotenv').config();
 require('mysql2');
 const path = require('path');
 const fs = require('fs');
+const http = require('node:http');
 const express = require('express');
 const sequelize = require('./config/database');
 const { segredoValido } = require('./config/segredos');
@@ -75,6 +76,10 @@ app.use('/api', chamadoRoutes);
 app.use('/api', dashboardRoutes);
 app.use('/api', simulacaoRoutes);
 
+// A entrada do frontend também é registrada explicitamente.
+app.get(['/', '/index.html'], (_req, res, next) => {
+  res.sendFile(path.join(publicDir, 'index.html'), erro => { if (erro) next(erro); });
+});
 app.use(express.static(publicDir, { extensions: ['html'], index: 'index.html' }));
 if (process.env.VERCEL !== '1') {
   app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads'), { dotfiles: 'deny', index: false }));
@@ -99,7 +104,24 @@ app.use((erro, _req, res, _next) => {
   res.status(status).json({ mensagem });
 });
 
+// Aguarda a abertura efetiva da porta. O callback de app.listen do Express 5
+// também pode ser invocado em caso de erro; nunca anuncie uma porta ocupada.
+function escutar(port, host) {
+  return new Promise((resolve, reject) => {
+    const server = http.createServer(app);
+    const onError = erro => { server.removeListener('listening', onListening); reject(erro); };
+    const onListening = () => { server.removeListener('error', onError); resolve(server); };
+    server.once('error', onError);
+    server.once('listening', onListening);
+    server.listen(port, host);
+  });
+}
+
 async function iniciarServidor() {
+  const index = path.join(publicDir, 'index.html');
+  if (!fs.existsSync(index) || !fs.statSync(index).isFile()) {
+    throw new Error('Arquivo public/index.html não encontrado. Extraia o ZIP completo antes de iniciar.');
+  }
   if (!segredoValido(process.env.JWT_SECRET)) {
     throw new Error('Configure JWT_SECRET com um segredo aleatório próprio no arquivo .env.');
   }
@@ -111,7 +133,29 @@ async function iniciarServidor() {
     console.log('Modelos e tabelas sincronizados.');
   }
   const port = Number(process.env.PORT || 3000);
-  return app.listen(port, () => console.log(`UrbanLink Flow disponível em http://localhost:${port}`));
+  if (!Number.isInteger(port) || port < 0 || port > 65535) {
+    throw new Error('PORT inválida no arquivo .env. Informe um número de 1 a 65535.');
+  }
+  // IPv4 explícito evita que localhost seja resolvido para outro serviço IPv6.
+  // Em produção ou na rede local, HOST pode ser configurado conforme necessário.
+  const local = process.env.NODE_ENV !== 'production';
+  const host = process.env.HOST || (local ? '127.0.0.1' : '0.0.0.0');
+  const limite = local && port !== 0 ? Math.min(port + 10, 65535) : port;
+  let server;
+  for (let tentativa = port; tentativa <= limite; tentativa++) {
+    try {
+      server = await escutar(tentativa, host);
+      break;
+    } catch (erro) {
+      if (erro.code !== 'EADDRINUSE') throw erro;
+      if (tentativa === limite) throw new Error(`Porta ${tentativa} ocupada. Encerre o outro servidor ou altere PORT no .env.`);
+      console.warn(`Porta ${tentativa} ocupada; tentando ${tentativa + 1}.`);
+    }
+  }
+  const endereco = server.address();
+  const hostLink = host === '0.0.0.0' ? '127.0.0.1' : host === '::' ? '[::1]' : host.includes(':') ? `[${host}]` : host;
+  console.log(`UrbanLink Flow disponível em http://${hostLink}:${endereco.port}/`);
+  return server;
 }
 
 if (require.main === module) {

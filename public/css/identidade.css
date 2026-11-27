@@ -1,4 +1,4 @@
-/* Identidade visual UrbanLink Flow V3.10: tema claro permanente. */
+/* Identidade visual UrbanLink Flow V3.10: identidade e temas claro/escuro. */
 :root{--theme-surface:#fff;--theme-text:#23304a;--theme-muted:#6b788f;--theme-line:#e0e7f1;--theme-page:#f4f7fc;--theme-accent:#f35b3f}
 html{color-scheme:light}
 /* Menu suspenso de perfil: apenas logout */
@@ -91,3 +91,37 @@ body[data-page="cadastro"] .etiqueta-tipo-usuario img{width:32px;height:32px;obj
 @media (prefers-reduced-motion: reduce) {
   .container-cartoes .cartao .profile-cta { transition: none; }
 }
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+html:root[data-theme="dark"]{--theme-surface:#1a2436;--theme-text:#e8edfa;--theme-muted:#bdc9de;--theme-line:#3b4a66;--theme-page:#1a2436}
+:where(html[data-theme="dark"]) .perfil-conta .menu-perfil .menu-logout{color:#e29e92}
+:where(html[data-theme="dark"]) .perfil-conta .menu-perfil button:focus-visible{outline:2px solid #93311f}
+:where(html[data-theme="dark"]) .sponsor-demo-notice{border:1px solid #3b4a66;background:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) .sponsor-demo-notice strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .sponsor-section-heading>span{color:#f19583}
+:where(html[data-theme="dark"]) .sponsor-section-heading h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .sponsor-section-heading p{color:#bdc9de}
+:where(html[data-theme="dark"]) .sponsor-featured{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .sponsor-featured-content h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .sponsor-featured-content p{color:#bdc9de}
+:where(html[data-theme="dark"]) .sponsor-pill{background:#3e2619;color:#e29f93}
+:where(html[data-theme="dark"]) .sponsor-logo{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .sponsor-logo--master{border-color:#3b4a66}
+:where(html[data-theme="dark"]) .sponsor-logo--green{color:#8ce8c2;background:#193e27;border-color:#2f8451}
+:where(html[data-theme="dark"]) .sponsor-logo--blue{color:#bdc9de;background:#131b2b;border-color:#3b4a66}
+:where(html[data-theme="dark"]) .sponsor-logo--purple{color:#bdc9de;background:#131b2b;border-color:#3b4a66}
+:where(html[data-theme="dark"]) .sponsor-tags span{background:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) .sponsor-company{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .sponsor-category{color:#f39481}
+:where(html[data-theme="dark"]) .sponsor-company h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .sponsor-company p{color:#bdc9de}
+:where(html[data-theme="dark"]) .urbanlink-footer{background:#1a2436;border-top:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .urbanlink-footer .footer-brand p{color:#bdc9de}
+:where(html[data-theme="dark"]) .urbanlink-footer .footer-navigation a{color:#e8edfa}
+:where(html[data-theme="dark"]) .urbanlink-footer .footer-navigation a:hover{color:#e29e92}
+:where(html[data-theme="dark"]) .urbanlink-footer .footer-bottom{border-top:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-outro-passo-primary{background:#a94532;border:1px solid #8b3727}
+:where(html[data-theme="dark"]) .container-cartoes .cartao .profile-cta,:where(html[data-theme="dark"]) .container-cartoes .cartao-destaque .profile-cta{background-color:#1a2436;color:#e8edfa;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .container-cartoes .cartao .profile-cta:hover,:where(html[data-theme="dark"]) .container-cartoes .cartao-destaque .profile-cta:hover{background-color:#ce2b0d;border-color:#93311f}
+:where(html[data-theme="dark"]) .container-cartoes .cartao .profile-cta:focus-visible{outline:3px solid #93371f}

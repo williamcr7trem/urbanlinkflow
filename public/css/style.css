@@ -236,3 +236,27 @@ body.page-exit{opacity:0;transform:translateY(4px);transition:opacity .17s ease,
 .icone-perfil{display:block;width:44px;height:44px;object-fit:contain}
 .icone-azul{width:52px;height:52px;padding:0;background:transparent;border-radius:12px}
 .cartao .tag{border-radius:10px}
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+:where(html[data-theme="dark"]) .cabecalho,:where(html[data-theme="dark"]) .rodape{background-color:#1a2436}
+:where(html[data-theme="dark"]) .cabecalho .login a{color:#f59280}
+:where(html[data-theme="dark"]) .rodape{color:#bdc9de}
+:where(html[data-theme="dark"]) .rodape a{color:#bdc9de}
+:where(html[data-theme="dark"]) .area-principal{background-color:#148ec87e}
+:where(html[data-theme="dark"]) .titulos{color:#e8edfa}
+:where(html[data-theme="dark"]) .titulos p{color:#e8edfa}
+:where(html[data-theme="dark"]) .cartao{background-color:#1a2436}
+:where(html[data-theme="dark"]) .cartao:hover{border:2px solid #3531d8}
+:where(html[data-theme="dark"]) .cartao h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .cartao .descricao{color:#e8edfa}
+:where(html[data-theme="dark"]) .titulo-lista{color:#e8edfa}
+:where(html[data-theme="dark"]) .cartao ul li{color:#e8edfa}
+:where(html[data-theme="dark"]) .lista-check li::before{color:#91e3b6}
+:where(html[data-theme="dark"]) .tag-verde{background-color:#193e23;color:#8de7a9}
+:where(html[data-theme="dark"]) .tag-amarela{background-color:#3e3719;color:#f5d680}
+:where(html[data-theme="dark"]) .tag-azul{background-color:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .botao{color:#e8edfa;border:solid 1px #3b4a66}
+:where(html[data-theme="dark"]) .botao:hover{background-color:#db2f00;border:1px solid #3531d8}
+:where(html[data-theme="dark"]) .cabecalho .login a:hover,:where(html[data-theme="dark"]) .cabecalho .login a:focus-visible{color:#ea998a;background:#3e2119}
+:where(html[data-theme="dark"]) .rodape a:hover{color:#f59280}

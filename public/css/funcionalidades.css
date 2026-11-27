@@ -49,3 +49,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .detalhes-entrega-motorista{display:grid;gap:5px;color:#758094;font-size:.75rem}.acoes-entrega-motorista{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.acoes-entrega-motorista .botao{font-size:.75rem;padding:9px 12px;text-decoration:none}
 .aviso-aprovacao-motorista{margin:0 0 14px;padding:12px 14px;border-radius:8px;background:#fff4e6;color:#89551a;font-size:.82rem;line-height:1.5}
 @media(max-width:760px){.grade-entregas-motorista{grid-template-columns:1fr}.topo-entregas-motorista{align-items:flex-start;flex-direction:column}.topo-entregas-motorista button{width:100%}.lista-entregas-motorista{padding:15px}}
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+:where(html[data-theme="dark"]) .mensagem-app.sucesso{background:#1a3d31;color:#9dd8c8;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mensagem-app.erro{background:#3e1f19;color:#e49a90;border:1px solid #93331f}
+:where(html[data-theme="dark"]) .mensagem-app.info{background:#131b2b;color:#e8edfa;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .badge-status{background:#131b2b;color:#e8edfa}
+:where(html[data-theme="dark"]) .badge-status[data-status="Entregue"],:where(html[data-theme="dark"]) .badge-status[data-status="Resolvido"]{background:#1a3d31;color:#9dd8c8}
+:where(html[data-theme="dark"]) .badge-status[data-status="Cancelada"],:where(html[data-theme="dark"]) .badge-status[data-status="Problema"]{background:#3e1f19;color:#e49a90}
+:where(html[data-theme="dark"]) .badge-status[data-status="Pendente"],:where(html[data-theme="dark"]) .badge-status[data-status="Aberto"]{background:#3e3219;color:#e5c58f}
+:where(html[data-theme="dark"]) .estado-vazio{color:#bdc9de}
+:where(html[data-theme="dark"]) .lista-eventos li{border-left:3px solid #3b4a66}
+:where(html[data-theme="dark"]) .lista-eventos small{color:#bdc9de}
+:where(html[data-theme="dark"]) #lista-motoristas-pendentes .motorista-pendente{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .texto-secundario{color:#bdc9de}
+:where(html[data-theme="dark"]) a:focus-visible,:where(html[data-theme="dark"]) button:focus-visible,:where(html[data-theme="dark"]) input:focus-visible,:where(html[data-theme="dark"]) select:focus-visible,:where(html[data-theme="dark"]) textarea:focus-visible{outline:2px solid #93311f}
+:where(html[data-theme="dark"]) .lista-entregas-motorista{background:#1a2436}
+:where(html[data-theme="dark"]) .topo-entregas-motorista h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .topo-entregas-motorista p{color:#bdc9de}
+:where(html[data-theme="dark"]) .cartao-entrega-motorista{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .codigo-entrega-motorista{color:#e8edfa}
+:where(html[data-theme="dark"]) .rota-entrega-motorista{border-left:3px solid #93311f}
+:where(html[data-theme="dark"]) .rota-entrega-motorista p{color:#e8edfa}
+:where(html[data-theme="dark"]) .detalhes-entrega-motorista{color:#bdc9de}
+:where(html[data-theme="dark"]) .aviso-aprovacao-motorista{background:#3e2e19;color:#e9bd8b}

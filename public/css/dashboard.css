@@ -860,3 +860,435 @@ body.page-exit{opacity:0;transform:translateY(4px);transition:opacity .17s ease,
 img, svg, video, canvas { max-width: 100%; }
 input, select, textarea, button { max-width: 100%; }
 body { overflow-x: hidden; }
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+:where(html[data-theme="dark"]) body{background-color:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .fundo-cinza{background-color:#131b2b}
+:where(html[data-theme="dark"]) .cabecalho-interno{background-color:#1a2436;border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .icone-menu{color:#f59280}
+:where(html[data-theme="dark"]) .navegacao-topo a{color:#bdc9de}
+:where(html[data-theme="dark"]) .navegacao-topo a.ativo{color:#f59280}
+:where(html[data-theme="dark"]) .perfil-usuario{color:#e8edfa}
+:where(html[data-theme="dark"]) .perfil-usuario:focus-visible,:where(html[data-theme="dark"]) .cartao-contato:focus-visible{outline:2px solid #93311f}
+:where(html[data-theme="dark"]) .area-rastreio p{color:#c9d4e8}
+:where(html[data-theme="dark"]) .busca-rastreio{background:#1a2436}
+:where(html[data-theme="dark"]) .migalhas{color:#bdc9de}
+:where(html[data-theme="dark"]) .cabecalho-secao h2,:where(html[data-theme="dark"]) .cabecalho-pagina h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .subtitulo-pagina{color:#bdc9de}
+:where(html[data-theme="dark"]) .cartao-info{background:#1a2436}
+:where(html[data-theme="dark"]) .numero-cartao{color:#e8edfa}
+:where(html[data-theme="dark"]) .titulo-cartao{color:#bdc9de}
+:where(html[data-theme="dark"]) .subtexto-cartao{color:#bdc9de}
+:where(html[data-theme="dark"]) .secao-tabela{background:#1a2436}
+:where(html[data-theme="dark"]) .topo-tabela h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .link-ver-todos{color:#f59280}
+:where(html[data-theme="dark"]) .tabela-pedidos th{border-bottom:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .tabela-pedidos td{border-bottom:1px solid #3b4a66;color:#e8edfa}
+:where(html[data-theme="dark"]) .link-acao{color:#bdc9de}
+:where(html[data-theme="dark"]) .destaque-laranja{color:#f59280}
+:where(html[data-theme="dark"]) .badge-verde{background:#193e23;color:#8de7a9}
+:where(html[data-theme="dark"]) .badge-azul{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .badge-amarelo{background:#3e3719;color:#f5d680}
+:where(html[data-theme="dark"]) .badge-vermelho{background:#3e1919;color:#ed8787}
+:where(html[data-theme="dark"]) .cartao-proxima-entrega{background:#1a2436}
+:where(html[data-theme="dark"]) .destaque-hora{color:#e8edfa}
+:where(html[data-theme="dark"]) .divisor{background:#131b2b}
+:where(html[data-theme="dark"]) .previsao-texto{color:#bdc9de}
+:where(html[data-theme="dark"]) .barra-progresso{background:#131b2b}
+:where(html[data-theme="dark"]) .progresso-preenchido{background:#ce2b0d}
+:where(html[data-theme="dark"]) .info-motorista{color:#bdc9de}
+:where(html[data-theme="dark"]) .icone-avatar{background:#131b2b}
+:where(html[data-theme="dark"]) .veiculo-motorista{color:#bdc9de}
+:where(html[data-theme="dark"]) .bloco-form{background:#1a2436}
+:where(html[data-theme="dark"]) .cabecalho-passo h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .cabecalho-passo p{color:#bdc9de}
+:where(html[data-theme="dark"]) .caixa-radio{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .caixa-radio.selecionado{border-color:#3b4a66;background-color:#1a2436}
+:where(html[data-theme="dark"]) .caixa-radio p{color:#bdc9de}
+:where(html[data-theme="dark"]) .tag-padrao{background:#131b2b}
+:where(html[data-theme="dark"]) .grupo-input label{color:#e8edfa}
+:where(html[data-theme="dark"]) .grupo-input input,:where(html[data-theme="dark"]) .grupo-input select{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .botao-seletor{border:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .botao-seletor.ativo{border-color:#3b4a66;color:#e8edfa;background:#1a2436}
+:where(html[data-theme="dark"]) .alerta-info{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .cartao-resumo{background:#1a2436}
+:where(html[data-theme="dark"]) .cartao-resumo h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .item-resumo{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .item-resumo small{color:#bdc9de}
+:where(html[data-theme="dark"]) .item-resumo p{color:#e8edfa}
+:where(html[data-theme="dark"]) .caixa-estimativa{background:#1a2436}
+:where(html[data-theme="dark"]) .caixa-estimativa small{color:#bdc9de}
+:where(html[data-theme="dark"]) .caixa-estimativa p{color:#e8edfa}
+:where(html[data-theme="dark"]) .botao-primario{background:#ce2b0d}
+:where(html[data-theme="dark"]) .botao-secundario{color:#e8edfa;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .hero-atendimento{background:#1a2436}
+:where(html[data-theme="dark"]) .hero-atendimento h1{color:#e8edfa}
+:where(html[data-theme="dark"]) .hero-atendimento p{color:#bdc9de}
+:where(html[data-theme="dark"]) .input-busca-grande{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .area-azul-claro{background-color:#131b2b}
+:where(html[data-theme="dark"]) .cartao-contato{background:#1a2436}
+:where(html[data-theme="dark"]) .cartao-contato strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .cartao-contato p{color:#bdc9de}
+:where(html[data-theme="dark"]) .janela-chat{background:#1a2436}
+:where(html[data-theme="dark"]) .status-online{color:#c9d4e8}
+:where(html[data-theme="dark"]) .corpo-chat{background:#1a2436}
+:where(html[data-theme="dark"]) .balao-chat.agente{background:#131b2b;color:#e8edfa}
+:where(html[data-theme="dark"]) .rodape-chat{background:#1a2436;border-top:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .rodape-chat input{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .titulo-faq{color:#e8edfa}
+:where(html[data-theme="dark"]) .item-faq{background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .icone-mais{color:#f59280}
+:where(html[data-theme="dark"]) .cartao-horarios{background:#1a2436}
+:where(html[data-theme="dark"]) .cartao-horarios strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .cartao-horarios p{color:#bdc9de}
+:where(html[data-theme="dark"]) .input-busca-pequeno{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .area-mapa{background:#131b2b}
+:where(html[data-theme="dark"]) .balao-flutuante{background:#1a2436}
+:where(html[data-theme="dark"]) .balao-flutuante small{color:#bdc9de}
+:where(html[data-theme="dark"]) .balao-flutuante strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .secao-branca{background:#1a2436}
+:where(html[data-theme="dark"]) .secao-branca h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .linha-tempo::before{background:#131b2b}
+:where(html[data-theme="dark"]) .ponto{background:#1a2436}
+:where(html[data-theme="dark"]) .ponto.verde{border-color:#35d467}
+:where(html[data-theme="dark"]) .ponto.laranja{border-color:#93311f;background:#ce2b0d}
+:where(html[data-theme="dark"]) .ponto.cinza{border-color:#3b4a66;background:#131b2b}
+:where(html[data-theme="dark"]) .info-tempo strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .info-tempo span{color:#bdc9de}
+:where(html[data-theme="dark"]) .item-tempo.atual strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .item-tempo.futuro strong,:where(html[data-theme="dark"]) .item-tempo.futuro span{color:#c9d4e8}
+:where(html[data-theme="dark"]) .tag-situacao{background:#3e1e19;color:#f59280}
+:where(html[data-theme="dark"]) .cartao-status-escuro p{color:#c9d4e8}
+:where(html[data-theme="dark"]) .barra-progresso-escura .preenchimento{background:#ce2b0d}
+:where(html[data-theme="dark"]) .cartao-info-lateral{background:#1a2436}
+:where(html[data-theme="dark"]) .cartao-info-lateral strong{color:#e8edfa;border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .icone-avatar.com-letra{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .item-detalhe small{color:#bdc9de}
+:where(html[data-theme="dark"]) .item-detalhe p{color:#e8edfa}
+:where(html[data-theme="dark"]) .migalhas-claras{color:#c9d4e8}
+:where(html[data-theme="dark"]) .hero-escuro p{color:#c9d4e8}
+:where(html[data-theme="dark"]) .titulo-secao-patrocinador{color:#e8edfa}
+:where(html[data-theme="dark"]) .cartao-master{background:#1a2436}
+:where(html[data-theme="dark"]) .img-placeholder-master{background-color:#131b2b}
+:where(html[data-theme="dark"]) .info-master h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .info-master p{color:#bdc9de}
+:where(html[data-theme="dark"]) .cartao-outro{background:#1a2436}
+:where(html[data-theme="dark"]) .img-placeholder-outro{background-color:#131b2b}
+:where(html[data-theme="dark"]) .cartao-outro h4{color:#e8edfa}
+:where(html[data-theme="dark"]) .cartao-outro p{color:#bdc9de}
+:where(html[data-theme="dark"]) .banner-cta p{color:#c9d4e8}
+:where(html[data-theme="dark"]) .botao-branco{background-color:#1a2436;color:#e8edfa;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .texto-data{color:#bdc9de}
+:where(html[data-theme="dark"]) .secao-dashboard h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .cartao-metricas{background:#1a2436}
+:where(html[data-theme="dark"]) .numero-metrica{color:#e8edfa}
+:where(html[data-theme="dark"]) .texto-destaque{color:#8de7a9}
+:where(html[data-theme="dark"]) .texto-alerta{color:#ed8787}
+:where(html[data-theme="dark"]) .cartao-acao-rapida{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .cartao-acao-rapida:hover{background:#1a2436}
+:where(html[data-theme="dark"]) .cartao-acao-rapida strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .bloco-conteudo{background:#1a2436}
+:where(html[data-theme="dark"]) .subtitulo-bloco{color:#bdc9de}
+:where(html[data-theme="dark"]) .botao-secundario-pequeno{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .caixa-busca-estoque{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .info-resumo-estoque strong{color:#bdc9de}
+:where(html[data-theme="dark"]) .info-resumo-estoque p{color:#e8edfa}
+:where(html[data-theme="dark"]) .alerta-reposicao{background:#3e3519;color:#f5d780}
+:where(html[data-theme="dark"]) .formulario-internos textarea{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .titulo-ultimos-registros{color:#e8edfa}
+:where(html[data-theme="dark"]) .item-registro{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .item-registro strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .item-registro small{color:#bdc9de}
+:where(html[data-theme="dark"]) .banner-institucional{background:#1a2436}
+:where(html[data-theme="dark"]) .banner-institucional h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .banner-institucional p{color:#bdc9de}
+:where(html[data-theme="dark"]) .item-recurso{background:#1a2436}
+:where(html[data-theme="dark"]) .item-recurso strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .item-recurso p{color:#bdc9de}
+:where(html[data-theme="dark"]) .caixa-seguranca p{color:#c9d4e8}
+:where(html[data-theme="dark"]) .fundo-azul-claro{background-color:#131b2b}
+:where(html[data-theme="dark"]) .aba{color:#e8edfa}
+:where(html[data-theme="dark"]) .aba.ativa{background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .contador-aba{background:#131b2b}
+:where(html[data-theme="dark"]) .barra-filtros{background:#1a2436}
+:where(html[data-theme="dark"]) .campo-filtro label{color:#bdc9de}
+:where(html[data-theme="dark"]) .campo-filtro input,:where(html[data-theme="dark"]) .campo-filtro select{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .cartao-tabela-gestao{background:#1a2436}
+:where(html[data-theme="dark"]) .barra-acoes-massa{background:#1a2436}
+:where(html[data-theme="dark"]) .botao-link-vermelho{color:#ed8787}
+:where(html[data-theme="dark"]) .botao-opcoes{color:#bdc9de}
+:where(html[data-theme="dark"]) .rodape-paginacao{color:#bdc9de}
+:where(html[data-theme="dark"]) .pag-btn{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .pag-btn.ativo{border-color:#3b4a66}
+:where(html[data-theme="dark"]) .janela-modal{background:#1a2436}
+:where(html[data-theme="dark"]) .topo-modal h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .topo-modal p{color:#bdc9de}
+:where(html[data-theme="dark"]) .fechar-modal{color:#bdc9de}
+:where(html[data-theme="dark"]) .input-desativado{background-color:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) .painel-lateral-rotas{background:#131b2b}
+:where(html[data-theme="dark"]) .cabecalho-rotas h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .cabecalho-rotas p{color:#e8edfa}
+:where(html[data-theme="dark"]) .busca-pequena input{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .metricas-rota{background:#1a243680}
+:where(html[data-theme="dark"]) .item-metrica-rota small{color:#bdc9de}
+:where(html[data-theme="dark"]) .item-metrica-rota strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .numero-parada.vermelho{background:#ce2b0d}
+:where(html[data-theme="dark"]) .info-parada strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .info-parada small{color:#bdc9de}
+:where(html[data-theme="dark"]) .alerta-rota-inteligente{background:#193e23;color:#8de7a9}
+:where(html[data-theme="dark"]) .conteudo-mapa-interativo{background:#131b2b}
+:where(html[data-theme="dark"]) .controles-zoom button{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .card-flutuante-proxima-parada{background:#1a2436}
+:where(html[data-theme="dark"]) .card-flutuante-proxima-parada small{color:#f59280}
+:where(html[data-theme="dark"]) .card-flutuante-proxima-parada strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .card-flutuante-proxima-parada p{color:#bdc9de}
+:where(html[data-theme="dark"]) .navegacao-topo a:hover,:where(html[data-theme="dark"]) .navegacao-topo a:focus-visible{color:#f59280;background:#3e2119}
+:where(html[data-theme="dark"]) .navegacao-topo a.ativo{color:#f59280;background:#3e2219}
+:where(html[data-theme="dark"]) .motorista-mapa-card{background:#1a2436}
+:where(html[data-theme="dark"]) .motorista-mapa-card .topo-mapa-info small{color:#bdc9de}
+:where(html[data-theme="dark"]) .driver-map-link{color:#f59280}
+:where(html[data-theme="dark"]) .driver-dashboard-map{background:#131b2b}
+:where(html[data-theme="dark"]) .driver-map-footer{color:#bdc9de}
+:where(html[data-theme="dark"]) .driver-map-dot{background:#ce2b0d}
+:where(html[data-theme="dark"]) .driver-map-pin{border:3px solid #3b4a66;background:#ce2b0d}
+:where(html[data-theme="dark"]) .navegacao-topo a:hover,:where(html[data-theme="dark"]) .navegacao-topo a:focus-visible{color:#f29383;background:#3e2219}
+:where(html[data-theme="dark"]) .navegacao-topo a.ativo{color:#f29383;background:#3e2319}
+:where(html[data-theme="dark"]) .driver-map-control{border:1px solid #3b4a66;background:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) .driver-map-control:hover:not(:disabled){background:#3e2219;color:#f29383;border-color:#93371f}
+:where(html[data-theme="dark"]) .driver-map-control-primary{background:#ce2b0d;border-color:#93311f}
+:where(html[data-theme="dark"]) .driver-map-control-primary:hover:not(:disabled){background:#be361e;border-color:#93311f}
+:where(html[data-theme="dark"]) .driver-map-link{color:#f59280}
+:where(html[data-theme="dark"]) .driver-map-popup{color:#e8edfa}
+:where(html[data-theme="dark"]) .driver-map-popup strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .driver-map-popup a{background:#3e2219;color:#ea998b}
+:where(html[data-theme="dark"]) .driver-map-popup a:hover{background:#ce2b0d}
+:where(html[data-theme="dark"]) .admin-message-action-icon{background:#3e2219;color:#f29383}
+:where(html[data-theme="dark"]) .admin-message-action-copy small{color:#bdc9de}
+
+
+/* V3 — rastreio e acompanhamento mais dinâmicos */
+.area-rastreio{
+  position:relative;
+  overflow:hidden;
+  padding:clamp(34px,5vw,56px) clamp(18px,4vw,40px);
+  border-radius:0 0 28px 28px;
+  background:linear-gradient(135deg,#18144a 0%,#25207d 55%,#1a69a6 100%);
+}
+.area-rastreio::before,.area-rastreio::after{content:'';position:absolute;border-radius:50%;pointer-events:none;opacity:.7}
+.area-rastreio::before{width:280px;height:280px;top:-120px;right:-90px;background:radial-gradient(circle,rgba(243,91,63,.35),transparent 68%)}
+.area-rastreio::after{width:210px;height:210px;left:-60px;bottom:-90px;background:radial-gradient(circle,rgba(174,221,242,.22),transparent 70%)}
+.area-rastreio h1{font-size:clamp(1.95rem,4vw,2.7rem);margin-bottom:10px;letter-spacing:-.03em;color:#fff}
+.area-rastreio p{max-width:52ch;color:#d6def8;font-size:.98rem;line-height:1.65;margin-bottom:24px}
+.busca-rastreio{position:relative;gap:12px;max-width:760px;background:rgba(255,255,255,.96);padding:10px;border-radius:18px;align-items:center;box-shadow:0 18px 44px rgba(8,10,35,.22)}
+.busca-rastreio input{padding:14px 10px;font-size:1rem;background:transparent}
+.busca-rastreio .botao-primario{width:auto;min-width:144px;border-radius:14px;padding:14px 18px;box-shadow:none}
+.icone-busca{margin-left:10px;background:#fff1ec;padding:10px;border-radius:12px}
+.cartao-proxima-entrega{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#fbfcff 100%);padding:30px;border-radius:22px;box-shadow:0 18px 34px rgba(17,26,68,.06);border:1px solid #e8ecf5}
+.cartao-proxima-entrega::after{content:'';position:absolute;inset:auto -40px -60px auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(243,91,63,.11),transparent 68%)}
+.cabecalho-secao{gap:16px;flex-wrap:wrap}
+.cartoes-resumo{gap:18px}
+.cartao-info,.secao-tabela{border:1px solid #e8ecf5;border-radius:20px;box-shadow:0 14px 30px rgba(17,26,68,.05)}
+.barra-progresso{height:10px;border-radius:999px;background:#eef2fb;overflow:hidden;margin:16px 0 18px}
+.progresso-preenchido{background:linear-gradient(90deg,#f35b3f,#ff8b52);border-radius:999px}
+.botoes-acao{gap:12px;flex-wrap:wrap}
+.botoes-acao .botao{border-radius:14px;min-height:50px}
+.detalhes-em-rota{display:grid;gap:14px}
+.perfil-motorista{padding:14px 16px;border-radius:16px;background:#f7f9fd;border:1px solid #ecf0f8}
+.previsao-texto{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#8a95aa}
+.codigo-rota{padding:7px 10px;border-radius:999px;background:#fff1ec;color:#d45134;font-weight:800;font-size:.76rem}
+.badge-azul{background:#edf4ff;color:#2358b8;padding:7px 11px;border-radius:999px}
+@media(max-width:860px){.busca-rastreio{flex-wrap:wrap}.busca-rastreio .botao-primario{width:100%}.cartao-proxima-entrega{padding:24px}.area-rastreio{border-radius:0 0 22px 22px}}
+:where(html[data-theme="dark"]) .area-rastreio{background:linear-gradient(135deg,#0f1530 0%,#1b2755 58%,#0e5b8e 100%)}
+:where(html[data-theme="dark"]) .area-rastreio p{color:#d1daef}
+:where(html[data-theme="dark"]) .busca-rastreio{background:rgba(26,36,54,.95)}
+:where(html[data-theme="dark"]) .icone-busca{background:#1f2a40}
+:where(html[data-theme="dark"]) .cartao-proxima-entrega,:where(html[data-theme="dark"]) .cartao-info,:where(html[data-theme="dark"]) .secao-tabela{background:#182234;border-color:#31415a;box-shadow:0 16px 30px rgba(0,0,0,.18)}
+:where(html[data-theme="dark"]) .perfil-motorista{background:#141d2d;border-color:#2d3d56}
+:where(html[data-theme="dark"]) .barra-progresso{background:#24324a}
+:where(html[data-theme="dark"]) .codigo-rota{background:rgba(255,123,86,.16);color:#ff9e84}
+:where(html[data-theme="dark"]) .badge-azul{background:#203657;color:#b9d6ff}
+
+
+/* V4 — acompanhamento com mais respiro e linhas inspiradas na marca */
+.cabecalho-acompanhamento{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(220px,1.1fr) minmax(340px,1.8fr) auto;
+  gap:20px;
+  align-items:center;
+  margin-bottom:32px;
+  padding:26px 24px;
+  background:linear-gradient(180deg,#ffffff 0%,#fbfcff 100%);
+  border:1px solid #e7ecf5;
+  border-radius:22px;
+  box-shadow:0 14px 28px rgba(17,26,68,.05);
+  overflow:hidden;
+}
+.cabecalho-acompanhamento::before{
+  display:block;
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.26;
+  background:
+    linear-gradient(135deg, transparent 0 74%, rgba(243,91,63,.16) 74% 74.7%, transparent 74.7% 100%),
+    linear-gradient(127deg, transparent 0 81%, rgba(27,22,106,.12) 81% 81.7%, transparent 81.7% 100%),
+    linear-gradient(119deg, transparent 0 88%, rgba(243,91,63,.10) 88% 88.6%, transparent 88.6% 100%);
+}
+.cabecalho-acompanhamento > *{position:relative;z-index:1}
+.cabecalho-acompanhamento h2{font-size:clamp(1.9rem,3vw,2.4rem);line-height:1.08;letter-spacing:-.03em;color:#1b1642;margin:0 0 12px}
+.cabecalho-acompanhamento .subtitulo-pagina{font-size:.98rem;line-height:1.65;color:#738196;margin:0;max-width:34ch}
+.input-busca-pequeno{
+  width:100%;
+  min-height:72px;
+  padding:0 18px;
+  border:1px solid #dce4ef;
+  border-radius:18px;
+  background:#fff;
+  font-size:1rem;
+}
+.cabecalho-acompanhamento .botao{width:auto;min-width:160px;min-height:72px;padding:0 22px;border-radius:16px;box-shadow:none}
+
+.area-rastreio::before,.area-rastreio::after,.cartao-proxima-entrega::after{display:none}
+.area-rastreio{
+  background:
+    linear-gradient(135deg,#18144a 0%,#25207d 58%,#1a69a6 100%),
+    linear-gradient(130deg, transparent 0 74%, rgba(243,91,63,.12) 74% 74.8%, transparent 74.8% 100%),
+    linear-gradient(122deg, transparent 0 82%, rgba(255,255,255,.10) 82% 82.7%, transparent 82.7% 100%),
+    linear-gradient(114deg, transparent 0 89%, rgba(243,91,63,.10) 89% 89.6%, transparent 89.6% 100%);
+}
+.cartao-proxima-entrega{
+  background:
+    linear-gradient(180deg,#fff 0%,#fbfcff 100%),
+    linear-gradient(130deg, transparent 0 82%, rgba(243,91,63,.08) 82% 82.8%, transparent 82.8% 100%),
+    linear-gradient(122deg, transparent 0 88%, rgba(27,22,106,.05) 88% 88.6%, transparent 88.6% 100%);
+}
+:where(html[data-theme="dark"]) .cabecalho-acompanhamento{
+  background:linear-gradient(180deg,#182234 0%,#172132 100%);
+  border-color:#32415a;
+  box-shadow:0 16px 30px rgba(0,0,0,.16)
+}
+:where(html[data-theme="dark"]) .cabecalho-acompanhamento::before{
+  opacity:.3;
+  background:
+    linear-gradient(135deg, transparent 0 74%, rgba(255,123,86,.18) 74% 74.7%, transparent 74.7% 100%),
+    linear-gradient(127deg, transparent 0 81%, rgba(209,212,255,.10) 81% 81.7%, transparent 81.7% 100%),
+    linear-gradient(119deg, transparent 0 88%, rgba(255,123,86,.12) 88% 88.6%, transparent 88.6% 100%);
+}
+:where(html[data-theme="dark"]) .cabecalho-acompanhamento h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .cabecalho-acompanhamento .subtitulo-pagina{color:#b8c5d8}
+:where(html[data-theme="dark"]) .input-busca-pequeno{background:#111a29;border-color:#32415a;color:#e8edfa}
+:where(html[data-theme="dark"]) .area-rastreio{
+  background:
+    linear-gradient(135deg,#0f1530 0%,#1b2755 58%,#0e5b8e 100%),
+    linear-gradient(130deg, transparent 0 74%, rgba(255,123,86,.14) 74% 74.8%, transparent 74.8% 100%),
+    linear-gradient(122deg, transparent 0 82%, rgba(255,255,255,.08) 82% 82.7%, transparent 82.7% 100%),
+    linear-gradient(114deg, transparent 0 89%, rgba(255,123,86,.10) 89% 89.6%, transparent 89.6% 100%);
+}
+:where(html[data-theme="dark"]) .cartao-proxima-entrega{
+  background:
+    linear-gradient(180deg,#182234 0%,#172132 100%),
+    linear-gradient(130deg, transparent 0 82%, rgba(255,123,86,.10) 82% 82.8%, transparent 82.8% 100%),
+    linear-gradient(122deg, transparent 0 88%, rgba(209,212,255,.05) 88% 88.6%, transparent 88.6% 100%);
+}
+@media(max-width:980px){
+  .cabecalho-acompanhamento{grid-template-columns:1fr;align-items:stretch;padding:22px 18px;gap:16px}
+  .cabecalho-acompanhamento .botao,.input-busca-pequeno{min-height:60px;width:100%}
+}
+
+
+/* V5 — barras retas no estilo da logo */
+.area-rastreio{
+  background:linear-gradient(135deg,#18144a 0%,#25207d 58%,#1a69a6 100%);
+}
+.cartao-proxima-entrega{
+  background:linear-gradient(180deg,#fff 0%,#fbfcff 100%);
+}
+:where(html[data-theme="dark"]) .area-rastreio{
+  background:linear-gradient(135deg,#0f1530 0%,#1b2755 58%,#0e5b8e 100%);
+}
+:where(html[data-theme="dark"]) .cartao-proxima-entrega{
+  background:linear-gradient(180deg,#182234 0%,#172132 100%);
+}
+
+.cabecalho-acompanhamento::before{
+  display:block;
+  content:'';
+  position:absolute;
+  right:22px;
+  top:20px;
+  width:126px;
+  height:54px;
+  pointer-events:none;
+  opacity:.22;
+  background:
+    linear-gradient(#f35b3f,#f35b3f) left top / 110px 4px no-repeat,
+    linear-gradient(#f35b3f,#f35b3f) left center / 84px 4px no-repeat,
+    linear-gradient(#1b1642,#1b1642) left bottom / 110px 4px no-repeat;
+}
+.area-rastreio{position:relative}
+.area-rastreio::before{
+  display:block;
+  display:block;
+  content:'';
+  position:absolute;
+  right:clamp(20px,4vw,44px);
+  top:clamp(18px,4vw,28px);
+  width:140px;
+  height:60px;
+  pointer-events:none;
+  opacity:.26;
+  background:
+    linear-gradient(rgba(243,91,63,.95),rgba(243,91,63,.95)) left top / 126px 4px no-repeat,
+    linear-gradient(rgba(243,91,63,.95),rgba(243,91,63,.95)) left center / 92px 4px no-repeat,
+    linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)) left bottom / 126px 4px no-repeat;
+}
+.area-rastreio::after{display:none}
+.cartao-proxima-entrega::after{
+  display:block;
+  display:block;
+  content:'';
+  position:absolute;
+  right:22px;
+  bottom:18px;
+  width:92px;
+  height:40px;
+  pointer-events:none;
+  opacity:.18;
+  background:
+    linear-gradient(#f35b3f,#f35b3f) left top / 86px 3px no-repeat,
+    linear-gradient(#f35b3f,#f35b3f) left center / 58px 3px no-repeat,
+    linear-gradient(#1b1642,#1b1642) left bottom / 86px 3px no-repeat;
+}
+:where(html[data-theme="dark"]) .cabecalho-acompanhamento::before{
+  opacity:.32;
+  background:
+    linear-gradient(#ff7b56,#ff7b56) left top / 110px 4px no-repeat,
+    linear-gradient(#ff7b56,#ff7b56) left center / 84px 4px no-repeat,
+    linear-gradient(#d1d4ff,#d1d4ff) left bottom / 110px 4px no-repeat;
+}
+:where(html[data-theme="dark"]) .area-rastreio::before{
+  opacity:.32;
+  background:
+    linear-gradient(rgba(255,123,86,.95),rgba(255,123,86,.95)) left top / 126px 4px no-repeat,
+    linear-gradient(rgba(255,123,86,.95),rgba(255,123,86,.95)) left center / 92px 4px no-repeat,
+    linear-gradient(rgba(230,236,255,.9),rgba(230,236,255,.9)) left bottom / 126px 4px no-repeat;
+}
+:where(html[data-theme="dark"]) .cartao-proxima-entrega::after{
+  opacity:.24;
+  background:
+    linear-gradient(#ff7b56,#ff7b56) left top / 86px 3px no-repeat,
+    linear-gradient(#ff7b56,#ff7b56) left center / 58px 3px no-repeat,
+    linear-gradient(#d1d4ff,#d1d4ff) left bottom / 86px 3px no-repeat;
+}
+@media(max-width:980px){
+  .cabecalho-acompanhamento::before{right:16px;top:16px;width:98px;height:44px;background:
+    linear-gradient(#f35b3f,#f35b3f) left top / 88px 4px no-repeat,
+    linear-gradient(#f35b3f,#f35b3f) left center / 68px 4px no-repeat,
+    linear-gradient(#1b1642,#1b1642) left bottom / 88px 4px no-repeat}
+}
+@media(max-width:640px){
+  .area-rastreio::before,.cartao-proxima-entrega::after,.cabecalho-acompanhamento::before{opacity:.16}
+}

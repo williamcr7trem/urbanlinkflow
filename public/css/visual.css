@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 :root{--ul-bg:#f4f6fb;--ul-navy:#1c2440;--ul-ink:#202940;--ul-muted:#718096;--ul-border:#e5eaf1;--ul-primary:#ec654a;--ul-orange:#ec654a;--ul-radius:16px;--ul-shadow:0 10px 30px rgba(24,38,63,.065);color-scheme:light}
 html{scroll-behavior:smooth}
 *,*::before,*::after{font-family:'DM Sans',Inter,system-ui,-apple-system,'Segoe UI',sans-serif!important;box-sizing:border-box}
@@ -21,7 +20,7 @@ input,textarea,select{border-radius:10px!important;min-width:0}
 .perfil-usuario{display:flex;align-items:center;gap:9px;border:1px solid #e5eaf1;background:#fff;border-radius:12px;padding:7px 11px;max-width:275px;font-size:.79rem;color:var(--ul-navy);font-weight:700;cursor:pointer;user-select:none}
 .perfil-usuario:hover,.perfil-usuario[aria-expanded=true]{background:#fff8f5;border-color:#f5bfaf}
 .perfil-usuario span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:185px}
-.perfil-usuario::after{content:'⌄';font-size:1.2rem;line-height:1;color:#7b8293;margin-left:1px}
+.perfil-usuario::after{content:none}
 .menu-perfil{position:absolute;z-index:1100;top:calc(100% + 9px);right:0;min-width:205px;padding:7px;background:#fff;border:1px solid var(--ul-border);border-radius:13px;box-shadow:0 16px 40px rgba(27,31,63,.14);animation:ul-pop .18s ease}
 .menu-perfil[hidden]{display:none!important}
 .menu-perfil button{display:flex;align-items:center;gap:10px;width:100%;padding:11px 13px;text-align:left;background:transparent;border:0;border-radius:9px;color:#bd4734;font-weight:800;cursor:pointer}
@@ -216,3 +215,93 @@ input,textarea,select{border-radius:10px!important;min-width:0}
 /* Melhor espaçamento no painel ao lado do mapa da rota do motorista */
 .layout-grid-dashboard{gap:26px;align-items:flex-start}.coluna-dir{display:flex;flex-direction:column;gap:18px}.cartao-parada-atual,.coluna-dir .secao-branca{padding:24px;border-radius:22px;box-shadow:0 14px 30px rgba(24,38,63,.055)}.acoes-parada-motorista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.lista-sequencia-paradas{display:flex;flex-direction:column;gap:12px}
 @media(max-width:760px){.acoes-parada-motorista{grid-template-columns:1fr}}
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+html:root[data-theme="dark"]{--ul-bg:#1a2436;--ul-navy:#e8edfa;--ul-ink:#e8edfa;--ul-muted:#bdc9de;--ul-border:#3b4a66}
+:where(html[data-theme="dark"]) button:focus-visible,:where(html[data-theme="dark"]) a:focus-visible,:where(html[data-theme="dark"]) input:focus-visible,:where(html[data-theme="dark"]) textarea:focus-visible,:where(html[data-theme="dark"]) select:focus-visible,:where(html[data-theme="dark"]) [role=button]:focus-visible{outline:3px solid #93321f}
+:where(html[data-theme="dark"]) .botao-primario:hover{background:#b83b24}
+:where(html[data-theme="dark"]) .navegacao-topo a{color:#bdc9de}
+:where(html[data-theme="dark"]) .navegacao-topo a:hover{background:#1a2436}
+:where(html[data-theme="dark"]) .navegacao-topo a.ativo{color:#e59d90;background:#3e2219}
+:where(html[data-theme="dark"]) .perfil-usuario{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .perfil-usuario:hover,:where(html[data-theme="dark"]) .perfil-usuario[aria-expanded=true]{background:#3e2419;border-color:#933a1f}
+:where(html[data-theme="dark"]) .perfil-usuario::after{color:#bdc9de}
+:where(html[data-theme="dark"]) .menu-perfil{background:#1a2436}
+:where(html[data-theme="dark"]) .menu-perfil button{color:#e19e93}
+:where(html[data-theme="dark"]) .menu-perfil button:hover{background:#3e2219}
+:where(html[data-theme="dark"]) .area-autenticacao{background:radial-gradient(ellipse at 12% 2%,#3e2119 0%,transparent 38%),radial-gradient(ellipse at 98% 20%,#131b2b 0%,transparent 42%),#1a2436}
+:where(html[data-theme="dark"]) .auth-topbar{color:#bdc9de}
+:where(html[data-theme="dark"]) .auth-topbar a{color:#e89b8d;background:#1a2436;border:1px solid #8f3123}
+:where(html[data-theme="dark"]) .auth-topbar a:hover{background:#3e2219}
+:where(html[data-theme="dark"]) .formulario .grupo-form input,:where(html[data-theme="dark"]) .formulario .grupo-form select{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .formulario .grupo-form input:focus{border-color:#93331f}
+:where(html[data-theme="dark"]) .auth-confirm-dialog,:where(html[data-theme="dark"]) .cnh-viewer{background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .auth-confirm-icon{background:#193e27;color:#92e2b5}
+:where(html[data-theme="dark"]) .auth-confirm-content p{color:#bdc9de}
+:where(html[data-theme="dark"]) .cnh-viewer-header button{background:#1a2436}
+:where(html[data-theme="dark"]) .cnh-viewer-preview{background:#1a2436}
+:where(html[data-theme="dark"]) .cnh-viewer-preview iframe{background:#1a2436}
+:where(html[data-theme="dark"]) .corpo-chat{background:#1a2436}
+:where(html[data-theme="dark"]) .chat-divider{color:#bdc9de;background:#131b2b}
+:where(html[data-theme="dark"]) .balao-chat.agente,:where(html[data-theme="dark"]) .chat-bubble.is-received{background:#1a2436;color:#e8edfa;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .area-azul-claro{background:#1a2436}
+:where(html[data-theme="dark"]) .admin-message-dialogue{background:#1a2436}
+:where(html[data-theme="dark"]) .admin-message-card{background:#1a2436!important}
+:where(html[data-theme="dark"]) .cabecalho-secao .subtitulo-bloco,:where(html[data-theme="dark"]) .subtitulo-bloco{color:#bdc9de}
+:where(html[data-theme="dark"]) .botoes-topo .botao-secundario{background:#1a2436;border:1px solid #3b4a66;color:#e8edfa}
+:where(html[data-theme="dark"]) .botoes-topo .botao-secundario:hover{background:#1a2436;border-color:#3b4a66}
+:where(html[data-theme="dark"]) .abas-status{background:#131b2b;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .aba{color:#bdc9de}
+:where(html[data-theme="dark"]) .aba:hover{background:#1a2436;color:#e8edfa;border-color:#3b4a66}
+:where(html[data-theme="dark"]) .aba.ativa{background:#1a2436;color:#e8edfa;border-color:#3b4a66}
+:where(html[data-theme="dark"]) .contador-aba{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .aba.ativa .contador-aba{background:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) .barra-filtros{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .campo-filtro label{color:#bdc9de}
+:where(html[data-theme="dark"]) .campo-filtro input,:where(html[data-theme="dark"]) .campo-filtro select{border:1px solid #3b4a66;background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .campo-filtro input::placeholder{color:#c9d4e8}
+:where(html[data-theme="dark"]) .campo-filtro input:focus,:where(html[data-theme="dark"]) .campo-filtro select:focus{background:#1a2436;border-color:#93331f}
+:where(html[data-theme="dark"]) .cartao-tabela-gestao{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .motorista-mapa-card .topo-mapa-info strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .motorista-mapa-card .topo-mapa-info small{color:#bdc9de}
+:where(html[data-theme="dark"]) .driver-map-link{background:#1a2436;border:1px solid #3b4a66;color:#e8edfa}
+:where(html[data-theme="dark"]) .driver-map-link:hover{background:#3e2219;border-color:#93371f;color:#f29383}
+:where(html[data-theme="dark"]) .gestao-entregas-orientacao{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .gestao-entregas-orientacao strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .gestao-entregas-orientacao p{color:#bdc9de}
+:where(html[data-theme="dark"]) .gestao-entregas-pendentes{background:#3e2719;color:#e2a193}
+:where(html[data-theme="dark"]) .gestao-entregas-pendentes::before{background:#c83f13}
+:where(html[data-theme="dark"]) .botao-atribuir-motorista{background:#c73114;border:1px solid #93321f}
+:where(html[data-theme="dark"]) .botao-atribuir-motorista:hover{background:#b73c24;border-color:#93321f}
+:where(html[data-theme="dark"]) .acoes-status-entrega select{border:1px solid #3b4a66;background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .acoes-status-entrega .botao-pequeno{background:#131b2b;color:#e8edfa;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .janela-modal-atribuicao{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .atribuir-etiqueta{color:#eb9b8a}
+:where(html[data-theme="dark"]) .resumo-pedido-atribuicao{background:#1a2436;border:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .resumo-pedido-atribuicao p{color:#e8edfa}
+:where(html[data-theme="dark"]) .resumo-pedido-atribuicao small{color:#bdc9de}
+:where(html[data-theme="dark"]) .janela-modal-atribuicao .grupo-input label{color:#bdc9de}
+:where(html[data-theme="dark"]) .janela-modal-atribuicao .grupo-input select{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .atribuicao-ajuda{color:#bdc9de}
+:where(html[data-theme="dark"]) .geo-endereco{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .geo-endereco-topo strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .geo-tag{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .geo-endereco p{color:#bdc9de}
+:where(html[data-theme="dark"]) .geo-feedback{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .geo-feedback[data-estado="encontrado"]{background:#193e2e;color:#98ddc2}
+:where(html[data-theme="dark"]) .geo-feedback[data-estado="aproximado"]{background:#3e2e19;color:#e6b98e}
+:where(html[data-theme="dark"]) .geo-feedback[data-estado="erro"]{background:#3e1f19;color:#dda098}
+:where(html[data-theme="dark"]) .geo-preview{color:#e89b8d}
+:where(html[data-theme="dark"]) .geo-credito{color:#bdc9de}
+:where(html[data-theme="dark"]) .geo-detalhes{border-top:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .geo-detalhes summary{color:#bdc9de}
+:where(html[data-theme="dark"]) .geo-coordenadas input{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .rodape-global{background:#1a2436;border-top:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .rodape-global__brand strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .rodape-global__links a{color:#bdc9de}
+:where(html[data-theme="dark"]) .rodape-global__links a:hover{color:#f59280}
+
+
+/* V4 — menu de perfil sem seta */
+.perfil-usuario{padding-right:11px}

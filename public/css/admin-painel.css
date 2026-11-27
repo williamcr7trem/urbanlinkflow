@@ -2,3 +2,68 @@
 @media(max-width:1200px){.admin-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-content-grid{grid-template-columns:1fr}.admin-aside{display:grid;grid-template-columns:1fr 1fr}.admin-hero-actions{flex:0 0 190px}}
 @media(max-width:800px){.admin-hero{flex-direction:column;align-items:flex-start}.admin-hero-actions{flex-direction:row;flex:unset;flex-wrap:wrap}.admin-hero-actions a{padding:0 19px}.admin-content-grid{gap:15px}.admin-section-heading{align-items:flex-start;flex-direction:column}.admin-metric-card{padding:18px!important}}
 @media(max-width:610px){.admin-panel-main{padding:18px 13px 45px}.admin-hero{margin-bottom:25px;padding:24px;border-radius:18px}.admin-hero-actions{width:100%}.admin-hero-actions a{flex:1;min-width:150px}.admin-metrics-grid{gap:10px}.admin-metric-card .numero-metrica{font-size:2rem!important}.admin-card-head>span:first-child{font-size:.69rem}.admin-metric-icon{width:34px;height:34px}.admin-shortcuts{gap:10px}.admin-shortcut{padding:14px 10px!important;gap:8px}.admin-shortcut-icon{width:34px;height:34px;font-size:1rem}.admin-shortcut strong{font-size:.75rem}.admin-shortcut small{font-size:.65rem}.admin-arrow{display:none}.admin-aside{grid-template-columns:1fr}.admin-table-panel,.admin-review-panel{padding:17px!important}.admin-table-toolbar{flex-direction:column;align-items:stretch}.admin-table-toolbar .caixa-busca-estoque{max-width:none}.motorista-pendente,.admin-document-row{align-items:flex-start;flex-direction:column}.motorista-pendente .acoes-tabela{width:100%;flex-wrap:wrap}.motorista-pendente .acoes-tabela button{flex:1}.admin-document-row button{width:100%}}
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+:where(html[data-theme="dark"]) .admin-panel-page{background:#1a2436}
+:where(html[data-theme="dark"]) .admin-pulse{background:#31ab71}
+:where(html[data-theme="dark"]) .admin-period{color:#f59780}
+:where(html[data-theme="dark"]) .admin-hero-primary{background:#cb3310}
+:where(html[data-theme="dark"]) .admin-hero-primary:hover{background:#bf381c}
+:where(html[data-theme="dark"]) .admin-section-heading h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-kicker{color:#ee9886}
+:where(html[data-theme="dark"]) .admin-section-note{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-metric-card{background:#1a2436!important;border:1px solid #3b4a66!important}
+:where(html[data-theme="dark"]) .admin-card-head>span:first-child{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-metric-icon.orange,:where(html[data-theme="dark"]) .admin-shortcut-icon.orange{background:#3e2519;color:#f19983}
+:where(html[data-theme="dark"]) .admin-metric-icon.blue,:where(html[data-theme="dark"]) .admin-shortcut-icon.blue{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-metric-icon.green,:where(html[data-theme="dark"]) .admin-shortcut-icon.green{background:#193e27;color:#90e4bd}
+:where(html[data-theme="dark"]) .admin-metric-icon.violet,:where(html[data-theme="dark"]) .admin-shortcut-icon.violet{background:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-metric-card .numero-metrica{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-metric-card .subtexto-cartao{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-metric-line.orange{background:#c93812}
+:where(html[data-theme="dark"]) .admin-metric-line.blue{background:#1e69bd}
+:where(html[data-theme="dark"]) .admin-metric-line.violet{background:#4c2caf}
+:where(html[data-theme="dark"]) .admin-shortcut{border:1px solid #3b4a66!important;background:#1a2436!important;color:#e8edfa!important}
+:where(html[data-theme="dark"]) .admin-shortcut:hover{border-color:#93321f!important}
+:where(html[data-theme="dark"]) .admin-shortcut strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-shortcut small{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-arrow{color:#c9d4e8}
+:where(html[data-theme="dark"]) .admin-view-all{color:#e99b8b}
+:where(html[data-theme="dark"]) .admin-table-toolbar input{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .admin-search-icon{color:#c9d4e8}
+:where(html[data-theme="dark"]) .admin-table-buttons button{background:#1a2436;border:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-table-panel .tabela-pedidos th{background:#1a2436;border-bottom:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-table-panel .tabela-pedidos td{border-bottom:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-table-footer{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-table-footer .info-resumo-estoque{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-table-footer a{color:#e8998c}
+:where(html[data-theme="dark"]) .admin-team-highlight{background:linear-gradient(145deg,#3e2519 0%,#3e2a19 100%);border:1px solid #93471f}
+:where(html[data-theme="dark"]) .admin-team-highlight h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-pending-total strong{color:#e89e8c}
+:where(html[data-theme="dark"]) .admin-pending-total span{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-team-highlight>a{color:#e0a195}
+:where(html[data-theme="dark"]) .admin-help-card{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .admin-help-icon{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-help-card h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-help-card p{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-help-card a{color:#e8998c}
+:where(html[data-theme="dark"]) .admin-review-panel{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .motorista-pendente,:where(html[data-theme="dark"]) .admin-document-row{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .motorista-pendente strong,:where(html[data-theme="dark"]) .admin-document-row strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .motorista-pendente .texto-secundario,:where(html[data-theme="dark"]) .admin-document-row small{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-document-row button{border:1px solid #3b4a66;background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-document-row button:hover{background:#3e2219}
+:where(html[data-theme="dark"]) .admin-panel-page .estado-vazio{color:#bdc9de}
+
+
+/* V3 — aprovações de CNH com mais respiro e leitura */
+.admin-review-panel{padding:26px 26px 28px;border-radius:22px}
+.admin-review-panel .admin-section-heading{margin-bottom:18px}
+.admin-driver-list{gap:14px}
+.motorista-pendente,.admin-document-row{padding:20px 22px;border-radius:16px;align-items:flex-start;box-shadow:0 10px 22px rgba(17,26,68,.04)}
+.motorista-pendente strong,.admin-document-row strong{font-size:.92rem}
+.motorista-pendente .texto-secundario,.admin-document-row small{font-size:.79rem;line-height:1.55}
+.admin-document-row button,.motorista-pendente button{min-height:42px;border-radius:11px}
+@media(max-width:760px){.admin-review-panel{padding:22px 18px}.motorista-pendente,.admin-document-row{padding:18px 16px;gap:12px;flex-direction:column}.motorista-pendente .acoes-tabela{width:100%;flex-wrap:wrap}}
+:where(html[data-theme="dark"]) .motorista-pendente,:where(html[data-theme="dark"]) .admin-document-row{background:#1c2739;border-color:#32425d;box-shadow:0 10px 20px rgba(0,0,0,.16)}

@@ -25,16 +25,22 @@ test('favicon UrbanLink aparece em todas as páginas, sem interferir nos ícones
   }
 });
 
-test('tema escuro removido de todos os arquivos e o logout permanece', () => {
+test('tema escuro persistente, com logo negativa e logout preservado', () => {
   const script = read('public/js/app.js');
-  assert.doesNotMatch(script, /function applyTheme\(|Ativar modo escuro|Ativar modo claro|menu-tema|dataset\.theme = nextTheme/);
+  const theme = read('public/js/theme.js');
+  assert.match(theme, /localStorage\.setItem\(key, preference\)/);
+  assert.match(theme, /logo-dark\.png/);
   assert.match(script, /clearSession\(\)/);
-  assert.match(script, /removeItem\('urbanlink_tema'\)/);
+  assert.doesNotMatch(script, /clearLegacyThemePreference/);
   assert.match(script, /menu\.append\(logout\)/);
-  assert.ok(!fs.existsSync(path.join(publicDir,'css/tema-v38.css')));
-  assert.ok(!fs.existsSync(path.join(publicDir,'css/tema-v39.css')));
+  assert.ok(fs.existsSync(path.join(publicDir,'assets/logo-dark.png')));
+  for (const name of fs.readdirSync(publicDir).filter(x=>x.endsWith('.html'))) {
+    const html = read('public/' + name);
+    assert.match(html, /js\/theme\.js/, name);
+    assert.match(html, /class="theme-toggle"/, name);
+    assert.match(html, /css\/interface\.css/, name);
+  }
 });
-
 test('os botões de seleção de perfil são neutros por padrão e laranja somente no hover', () => {
   const css = read('public/css/identidade.css');
   assert.match(css, /\.cartao-destaque \.profile-cta \{[\s\S]*?background-color: #fff/);

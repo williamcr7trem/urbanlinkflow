@@ -87,3 +87,51 @@
 .sim-history-panel .table-responsive{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 @media(max-width:760px){.sim-hero{margin-top:0}.sim-hero-tag{max-width:100%;white-space:normal}.sim-layout{gap:14px}.sim-history-panel{padding:17px}.sim-history-table{min-width:700px}}
 @media(max-width:420px){.sim-hero h1{font-size:1.5rem}.sim-form-panel,.sim-explainer-card,.sim-result-card,.sim-history-panel{padding:15px}.sim-section-title{align-items:flex-start}.sim-result-metrics{grid-template-columns:1fr 1fr}.sim-result-metric strong{font-size:1rem}}
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+:where(html[data-theme="dark"]) .sim-eyebrow{color:#f59b85}
+:where(html[data-theme="dark"]) .sim-panel,:where(html[data-theme="dark"]) .sim-explainer-card,:where(html[data-theme="dark"]) .sim-result-card,:where(html[data-theme="dark"]) .sim-history-panel{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .sim-panel-heading{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .sim-step-number{background:#3e2119;color:#f59280}
+:where(html[data-theme="dark"]) .sim-panel-heading h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-panel-heading p{color:#bdc9de}
+:where(html[data-theme="dark"]) .sim-form-section{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .sim-section-title>span{background:#131b2b;color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-section-title h3{color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-section-title p{color:#bdc9de}
+:where(html[data-theme="dark"]) .sim-form .grupo-form label,:where(html[data-theme="dark"]) .sim-field-label{color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-form .grupo-form input,:where(html[data-theme="dark"]) .sim-form .grupo-form select,:where(html[data-theme="dark"]) .sim-form>select{border:1px solid #3b4a66;background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-form .grupo-form input:focus,:where(html[data-theme="dark"]) .sim-form .grupo-form select:focus,:where(html[data-theme="dark"]) .sim-form>select:focus{border-color:#93311f}
+:where(html[data-theme="dark"]) .sim-form select[multiple] option:checked{background:#3e2119 linear-gradient(0deg,#3e2119,#3e2119);color:#e09f94}
+:where(html[data-theme="dark"]) .sim-selection-tools small,:where(html[data-theme="dark"]) .sim-location-top span{color:#bdc9de}
+:where(html[data-theme="dark"]) .sim-text-button{color:#f49381}
+:where(html[data-theme="dark"]) .sim-count-warning{color:#f5b280!important}
+:where(html[data-theme="dark"]) .sim-help-text{color:#c9d4e8}
+:where(html[data-theme="dark"]) .sim-submit-button{background:#ce2b0d}
+:where(html[data-theme="dark"]) .sim-submit-button:hover{background:#c62f15}
+:where(html[data-theme="dark"]) .sim-side-icon{background:#131b2b;color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-explainer-card h2,:where(html[data-theme="dark"]) .sim-result-card h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-explainer-card>p{color:#bdc9de}
+:where(html[data-theme="dark"]) .sim-rule{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .sim-rule strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-rule span{color:#bdc9de}
+:where(html[data-theme="dark"]) .sim-disclaimer{background:#1a2436;color:#bdc9de!important}
+:where(html[data-theme="dark"]) .sim-result-card{border-color:#893c29}
+:where(html[data-theme="dark"]) .sim-result-eyebrow{color:#f59280}
+:where(html[data-theme="dark"]) .sim-result-card>p{color:#bdc9de}
+:where(html[data-theme="dark"]) .sim-empty-illustration{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .sim-empty-illustration span{color:#f59280}
+:where(html[data-theme="dark"]) .sim-empty-illustration i{background:#3e2019}
+:where(html[data-theme="dark"]) .sim-result-ready{border-color:#3b4a66}
+:where(html[data-theme="dark"]) .sim-result-metric{background:#1a2436}
+:where(html[data-theme="dark"]) .sim-result-metric small,:where(html[data-theme="dark"]) .sim-result-metric span{color:#bdc9de}
+:where(html[data-theme="dark"]) .sim-result-metric strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-result-metric.is-highlight{background:#3e2119}
+:where(html[data-theme="dark"]) .sim-result-metric.is-highlight strong{color:#f29383}
+:where(html[data-theme="dark"]) .sim-result-note{color:#bdc9de!important}
+:where(html[data-theme="dark"]) .sim-history-heading h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .sim-history-heading p{color:#bdc9de}
+:where(html[data-theme="dark"]) .sim-history-table th{color:#bdc9de}
+:where(html[data-theme="dark"]) .sim-history-table .botao-pequeno{background:#3e1f19;color:#e49d90}
+:where(html[data-theme="dark"]) .sim-history-table .botao-pequeno:hover{background:#3e2019}

@@ -1,5 +1,4 @@
 /* UrbanLink Flow V3.7 – acabamento visual fiel ao protótipo enviado */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 :root{--u-ink:#1b195b;--u-navy:#19166a;--u-orange:#ff5638;--u-bg:#f5f7fb;--u-sky:#c4e7f8;--u-slate:#68788e;--u-line:#dbe3ed;--u-shadow:0 14px 34px rgba(22,30,67,.055);color-scheme:light}
 *,*::before,*::after{box-sizing:border-box;font-family:'DM Sans',Inter,'Segoe UI',Arial,sans-serif!important}
 body{min-height:100vh;display:flex;flex-direction:column;background:#f5f7fb;color:#273149}
@@ -148,3 +147,67 @@ body[data-page="driver-dashboard"] .driver-map-link:hover{background:#fff0eb;col
 
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+html:root[data-theme="dark"]{--u-ink:#e8edfa;--u-navy:#e8edfa;--u-bg:#1a2436;--u-sky:#131b2b;--u-slate:#bdc9de;--u-line:#3b4a66}
+:where(html[data-theme="dark"]) body{background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .urbanlink-footer{background:#1a2436;border-top:1px solid #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .footer-brand{color:#bdc9de}
+:where(html[data-theme="dark"]) .urbanlink-footer nav a{color:#e8edfa}
+:where(html[data-theme="dark"]) .urbanlink-footer nav a:hover{color:#f09384}
+:where(html[data-theme="dark"]) .urbanlink-footer small{color:#bdc9de}
+:where(html[data-theme="dark"]) .container-cartoes .cartao{border-color:#3b4a66}
+:where(html[data-theme="dark"]) .container-cartoes .cartao:hover{border-color:#3b4a66}
+:where(html[data-theme="dark"]) .container-cartoes .cartao-destaque{border-color:#4940c9}
+:where(html[data-theme="dark"]) .container-cartoes .cartao h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .container-cartoes .profile-cta{background:#1a2436;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .container-cartoes .profile-cta:hover{background:#3e2019;color:#e19e93}
+:where(html[data-theme="dark"]) .container-cartoes .cartao-destaque .profile-cta:hover{background:#c53116}
+:where(html[data-theme="dark"]) .area-principal{background:#131b2b}
+:where(html[data-theme="dark"]) .area-autenticacao{background:linear-gradient(165deg,#131b2b 0%,#131b2b 51%,#1a2436 100%)}
+:where(html[data-theme="dark"]) .cartao-autenticacao{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .cartao-destaque-azul{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .grupo-form label{color:#e8edfa}
+:where(html[data-theme="dark"]) .grupo-form input{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .grupo-form input:focus{border-color:#93341f}
+:where(html[data-theme="dark"]) .cartao-autenticacao .botao-primario:hover{background:#c1331a}
+:where(html[data-theme="dark"]) .mapa-layout{background:#1a2436}
+:where(html[data-theme="dark"]) .mapa-sidebar{background:#1a2436}
+:where(html[data-theme="dark"]) .mapa-resumo{background:#1a2436}
+:where(html[data-theme="dark"]) .mapa-panel{background:#1a2436}
+:where(html[data-theme="dark"]) .mapa-panel-number{background:#3e2319;color:#e79c8d}
+:where(html[data-theme="dark"]) .mapa-panel-heading p{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-sidebar .mapa-label{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-sidebar .mapa-input{border:1px solid #3b4a66;background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-sidebar .mapa-input:focus{background:#1a2436}
+:where(html[data-theme="dark"]) .mapa-help{color:#bdc9de!important}
+:where(html[data-theme="dark"]) .mapa-list-heading h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .mapa-select-tools{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mapa-select-tools #map-eligible-label{color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-delivery-row{border-bottom-color:#3b4a66}
+:where(html[data-theme="dark"]) .mapa-delivery-row:hover{background:#1a2436}
+:where(html[data-theme="dark"]) .mapa-delivery-row.is-selected{background:#3e2419;border-color:#93361f}
+:where(html[data-theme="dark"]) .mapa-repair-button{background:#131b2b;color:#e8edfa;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mapa-repair-button:hover{background:#131b2b}
+:where(html[data-theme="dark"]) .mapa-position-status{border:1px solid #93641f}
+:where(html[data-theme="dark"]) .mapa-disclaimer{border:1px solid #3b4a66;background:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) .mapa-legenda{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .mapa-feedback{background:#131b2b;border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .map-fix-dialog{color:#e8edfa}
+:where(html[data-theme="dark"]) .map-fix-dialog header p{color:#bdc9de}
+:where(html[data-theme="dark"]) .map-fix-dialog header button{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .map-fix-message{background:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) .map-fix-coordinates label{color:#e8edfa}
+:where(html[data-theme="dark"]) .map-fix-coordinates input{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) body[data-page="driver-dashboard"] .cartao-parada-atual{background:#1a2436}
+:where(html[data-theme="dark"]) .driver-operation-intro{border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .driver-operation-intro span{color:#f39481}
+:where(html[data-theme="dark"]) .driver-operation-intro p,:where(html[data-theme="dark"]) .driver-sequence-description{color:#bdc9de}
+:where(html[data-theme="dark"]) body[data-page="driver-dashboard"] .info-cliente-linha{background:#1a2436}
+:where(html[data-theme="dark"]) body[data-page="driver-dashboard"] .horario-limite{border:1px solid #3b4a66;background:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) body[data-page="driver-dashboard"] .driver-map-link{background:#1a2436;border:1px solid #3b4a66;color:#e8edfa}
+:where(html[data-theme="dark"]) body[data-page="driver-dashboard"] .driver-map-link:hover{background:#3e2219;color:#ec9a89}
+:where(html[data-theme="dark"]) .sim-location-alert{background:#3e2719;border:1px solid #93521f;color:#e9b18b}
+:where(html[data-theme="dark"]) .sim-map-shortcut{color:#e9998b;border:1px solid #93381f;background:#3e2319}
+:where(html[data-theme="dark"]) .sim-map-shortcut:hover{background:#3e2119}

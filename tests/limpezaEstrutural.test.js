@@ -10,7 +10,8 @@ function read(file) { return fs.readFileSync(path.join(base, file), 'utf8'); }
 test('estrutura limpa mantém um frontend, documentação essencial e imagens ativas', () => {
   assert.ok(fs.statSync(publicDir).isDirectory());
   assert.ok(!fs.existsSync(path.join(base, 'src/public')));
-  assert.ok(!fs.existsSync(path.join(base,'node_modules')));
+  // Dependências instaladas são permitidas no ambiente de desenvolvimento.
+  assert.match(read('.gitignore'), /^node_modules\/$/m);
   for (const filename of ['mapa-esquematico.svg','logo-positiva.png','logo-negativa.png']) {
     assert.ok(!fs.existsSync(path.join(publicDir,'assets',filename)), filename);
   }
@@ -19,6 +20,7 @@ test('estrutura limpa mantém um frontend, documentação essencial e imagens at
     'AUDITORIA_REQUISITOS.md',
     'GUIA_DE_USO.md',
     'LOCALIZACAO_AUTOMATICA.md',
+    'Modelagem_Banco_de_Dados.docx',
     'RELATORIO_LIMPEZA.md',
     'openapi.json'
   ]);

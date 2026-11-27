@@ -228,3 +228,14 @@ body[data-page="cadastro"] .etiqueta-tipo-usuario img {display:none;}
   .auth-header .auth-header-account{font-size:.72rem;}
   .auth-header .auth-header-account a{padding:7px 8px;}
 }
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+@media (max-width: 850px) {
+:where(html[data-theme="dark"]) table.tabela-pedidos tbody tr,:where(html[data-theme="dark"]) table.sim-history-table tbody tr{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) table.tabela-pedidos tbody td,:where(html[data-theme="dark"]) table.sim-history-table tbody td{border-bottom:1px solid #3b4a66!important}
+:where(html[data-theme="dark"]) table.tabela-pedidos tbody td::before,:where(html[data-theme="dark"]) table.sim-history-table tbody td::before{color:#bdc9de}
+}
+:where(html[data-theme="dark"]) .auth-topbar.auth-header{border-bottom:1px solid #3b4a66;background:#1a2436;color:#bdc9de}
+:where(html[data-theme="dark"]) .auth-header .auth-header-account a{border:1px solid #8f3123;background:#1a2436;color:#e89b8d}
+:where(html[data-theme="dark"]) .auth-header .auth-header-account a:hover{background:#3e2219;color:#e49d91}

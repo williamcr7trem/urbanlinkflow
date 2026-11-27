@@ -72,3 +72,41 @@
   .admin-message-reply-controls { align-items: stretch; flex-direction: column; }
   .admin-message-status-field select, .admin-message-send { width: 100%; }
 }
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+:where(html[data-theme="dark"]) .admin-message-action-icon{background:#3e2219;color:#f29383}
+:where(html[data-theme="dark"]) .admin-message-action-copy small{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-back-link{color:#f29383}
+:where(html[data-theme="dark"]) .admin-messages-heading h1{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-messages-intro{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-message-stat{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .admin-message-stat span{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-message-stat strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-message-stat.is-open{border-top:3px solid #93661f}
+:where(html[data-theme="dark"]) .admin-message-stat.is-progress{border-top:3px solid #3b4a66}
+:where(html[data-theme="dark"]) .admin-message-stat.is-done{border-top:3px solid #32815e}
+:where(html[data-theme="dark"]) .admin-message-inbox{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .admin-inbox-heading h2{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-inbox-heading p{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-message-filters input,:where(html[data-theme="dark"]) .admin-message-filters select{border:1px solid #3b4a66;background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-message-card{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .admin-message-sender strong{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-message-sender small{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-message-status{background:#3e3219;color:#efc785}
+:where(html[data-theme="dark"]) .admin-message-status.status-em-atendimento{background:#131b2b;color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-message-status.status-resolvido{background:#193e27;color:#96deb7}
+:where(html[data-theme="dark"]) .admin-message-subject{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-message-date{color:#c9d4e8}
+:where(html[data-theme="dark"]) .admin-message-body{border-left:3px solid #93361f;background:#1a2436}
+:where(html[data-theme="dark"]) .admin-message-body p,:where(html[data-theme="dark"]) .admin-message-previous-reply p{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-message-previous-reply{background:#1b3c25}
+:where(html[data-theme="dark"]) .admin-message-previous-reply strong{color:#96deb7}
+:where(html[data-theme="dark"]) .admin-message-reply-form>label{color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-message-reply-form textarea{border:1px solid #3b4a66;background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-message-reply-form textarea:focus,:where(html[data-theme="dark"]) .admin-message-filters input:focus,:where(html[data-theme="dark"]) .admin-message-filters select:focus,:where(html[data-theme="dark"]) .admin-message-status-field select:focus{border-color:#93311f}
+:where(html[data-theme="dark"]) .admin-message-status-field{color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-message-status-field select{border:1px solid #3b4a66;background:#1a2436;color:#e8edfa}
+:where(html[data-theme="dark"]) .admin-messages-empty{border:1px dashed #3b4a66;color:#bdc9de}
+:where(html[data-theme="dark"]) .admin-messages-error{color:#ed8787;border-color:#931f1f}
+:where(html[data-theme="dark"]) .admin-messages-footnote{color:#bdc9de}

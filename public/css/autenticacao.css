@@ -225,6 +225,56 @@ body.page-exit{opacity:0;transform:translateY(4px);transition:opacity .17s ease,
 .subtitulo-autenticacao{text-align:left;font-size:1rem;color:#6f7d90;line-height:1.65;margin:0}
 .etiqueta-tipo-usuario{padding:16px 18px;border-radius:14px;font-size:1.35rem;font-weight:800;margin:0 0 26px;background:#1b1a7c}
 .formulario{gap:18px}.linha-form{gap:18px}.grupo-form{gap:9px}.grupo-form label,.titulo-upload{font-size:1rem;color:#2a2b57}.grupo-form input{min-height:60px;padding:16px 18px;border:1px solid #d9e0ef;border-radius:16px;font-size:1.05rem;color:#313759;background:#fff}.grupo-form input::placeholder{color:#97a1ba}.grupo-form input:focus{border-color:#ec654a;box-shadow:0 0 0 4px rgba(243,90,63,.12)}
-.grupo-checkbox{margin-top:4px;gap:12px}.grupo-checkbox input{width:20px;height:20px;accent-color:#18a84b}.texto-checkbox{font-size:1rem;color:#46526a}.botao{border-radius:16px;min-height:62px;font-size:1.15rem;font-weight:800}.botao-primario{background:#ff5a2c}.botao-primario:hover{background:#f24d1d}
+.grupo-checkbox{margin-top:4px;gap:12px}.grupo-checkbox input{width:20px;height:20px;accent-color:#18a84b}.texto-checkbox{font-size:1rem;color:#46526a}.botao{border-radius:16px;min-height:62px;font-size:1.15rem;font-weight:800}.botao-primario{background:#f35b3f}.botao-primario:hover{background:#f24d1d}
 .area-upload{padding:18px;border:1px solid #e6ebf5;border-radius:18px;background:#fbfcfe}.botao-upload{width:100%;padding:16px;border-radius:14px}.botao-upload span{font-size:.98rem}.nome-arquivo-cnh{font-size:.9rem;color:#6e7b91}
 @media(max-width:760px){.auth-topbar{padding:16px 18px}.cartao-autenticacao{padding:24px 18px;border-radius:20px}.cabecalho-cadastro-ilustrado{align-items:flex-start;flex-direction:column;gap:14px}.titulo-autenticacao{font-size:2rem}.etiqueta-tipo-usuario{font-size:1.1rem;padding:13px 14px}.grupo-form input{min-height:54px;font-size:1rem}.texto-checkbox{font-size:.92rem}}
+
+
+/* Tema escuro: variantes cromáticas dos componentes desta folha. */
+:where(html[data-theme="dark"]) .area-autenticacao{background-color:#131b2b}
+:where(html[data-theme="dark"]) .cartao-autenticacao{background-color:#1a2436}
+:where(html[data-theme="dark"]) .cartao-destaque-azul{border:3px solid #3b4a66}
+:where(html[data-theme="dark"]) .titulo-autenticacao{color:#e8edfa}
+:where(html[data-theme="dark"]) .subtitulo-autenticacao{color:#bdc9de}
+:where(html[data-theme="dark"]) .grupo-form label{color:#e8edfa}
+:where(html[data-theme="dark"]) .grupo-form input{border:1px solid #3b4a66;color:#e8edfa}
+:where(html[data-theme="dark"]) .grupo-form input:focus{border-color:#3b4a66}
+:where(html[data-theme="dark"]) .texto-checkbox{color:#bdc9de}
+:where(html[data-theme="dark"]) .link-esqueceu{color:#f59280}
+:where(html[data-theme="dark"]) .botao-primario{background-color:#ce2b0d}
+:where(html[data-theme="dark"]) .titulo-upload{color:#e8edfa}
+:where(html[data-theme="dark"]) .botao-upload span{color:#e8edfa}
+:where(html[data-theme="dark"]) .link-cadastro-login{color:#bdc9de}
+:where(html[data-theme="dark"]) .link-cadastro-login a{color:#f59280}
+:where(html[data-theme="dark"]) .nome-arquivo-cnh{color:#bdc9de}
+:where(html[data-theme="dark"]) .botao-upload{border:1px dashed #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .botao-upload:hover{border-color:#93311f;background:#3e2319}
+:where(html[data-theme="dark"]) .cadastro-cnh-upload{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .cadastro-cnh-upload .titulo-upload span{color:#f59280}
+:where(html[data-theme="dark"]) .auth-topbar{background:#1a2436;color:#bdc9de;border-bottom:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .auth-topbar a{color:#f59280}
+:where(html[data-theme="dark"]) .cartao-autenticacao{border:1px solid #3b4a66}
+:where(html[data-theme="dark"]) .icone-cadastro-topo{background:#131b2b}
+:where(html[data-theme="dark"]) .titulo-autenticacao{color:#e8edfa}
+:where(html[data-theme="dark"]) .subtitulo-autenticacao{color:#bdc9de}
+:where(html[data-theme="dark"]) .grupo-form label,:where(html[data-theme="dark"]) .titulo-upload{color:#e8edfa}
+:where(html[data-theme="dark"]) .grupo-form input{border:1px solid #3b4a66;color:#e8edfa;background:#1a2436}
+:where(html[data-theme="dark"]) .grupo-form input::placeholder{color:#c9d4e8}
+:where(html[data-theme="dark"]) .grupo-form input:focus{border-color:#93331f}
+:where(html[data-theme="dark"]) .texto-checkbox{color:#bdc9de}
+:where(html[data-theme="dark"]) .botao-primario{background:#f35b3f}
+:where(html[data-theme="dark"]) .botao-primario:hover{background:#cf380c}
+:where(html[data-theme="dark"]) .area-upload{border:1px solid #3b4a66;background:#1a2436}
+:where(html[data-theme="dark"]) .nome-arquivo-cnh{color:#bdc9de}
+
+
+/* V3 — formulários mais vivos e amigáveis */
+.cartao-autenticacao{backdrop-filter:blur(8px)}
+.etiqueta-tipo-usuario{position:relative;overflow:hidden}
+.etiqueta-tipo-usuario::after{content:'';position:absolute;inset:auto -12px -18px auto;width:72px;height:72px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 65%)}
+.grupo-form select{min-height:60px;padding:16px 18px;border:1px solid #d9e0ef;border-radius:16px;font-size:1.02rem;color:#313759;background-color:#fff;appearance:none;background-image:linear-gradient(45deg,transparent 50%, #f35b3f 50%),linear-gradient(135deg,#f35b3f 50%, transparent 50%);background-position:calc(100% - 24px) calc(50% - 3px),calc(100% - 18px) calc(50% - 3px);background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:46px}
+.grupo-form select:focus{outline:none;border-color:#f35b3f;box-shadow:0 0 0 4px rgba(243,91,63,.12)}
+.botao-primario{background:linear-gradient(135deg,#f35b3f,#ff7f4f)}
+.botao-primario:hover{background:linear-gradient(135deg,#ea5436,#ff7442)}
+:where(html[data-theme="dark"]) .grupo-form select{border:1px solid #3b4a66;color:#e8edfa;background-color:#1a2436;background-image:linear-gradient(45deg,transparent 50%, #ff8e70 50%),linear-gradient(135deg,#ff8e70 50%, transparent 50%)}
+:where(html[data-theme="dark"]) .grupo-form select:focus{border-color:#ff7b56}

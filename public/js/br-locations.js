@@ -1,0 +1,313 @@
+window.BR_LOCATIONS = {
+  "states": {
+    "AC": "Acre",
+    "AL": "Alagoas",
+    "AP": "Amapá",
+    "AM": "Amazonas",
+    "BA": "Bahia",
+    "CE": "Ceará",
+    "DF": "Distrito Federal",
+    "ES": "Espírito Santo",
+    "GO": "Goiás",
+    "MA": "Maranhão",
+    "MT": "Mato Grosso",
+    "MS": "Mato Grosso do Sul",
+    "MG": "Minas Gerais",
+    "PA": "Pará",
+    "PB": "Paraíba",
+    "PR": "Paraná",
+    "PE": "Pernambuco",
+    "PI": "Piauí",
+    "RJ": "Rio de Janeiro",
+    "RN": "Rio Grande do Norte",
+    "RS": "Rio Grande do Sul",
+    "RO": "Rondônia",
+    "RR": "Roraima",
+    "SC": "Santa Catarina",
+    "SP": "São Paulo",
+    "SE": "Sergipe",
+    "TO": "Tocantins"
+  },
+  "cities": {
+    "AC": [
+      "Rio Branco",
+      "Cruzeiro do Sul",
+      "Sena Madureira",
+      "Tarauacá",
+      "Feijó",
+      "Brasiléia"
+    ],
+    "AL": [
+      "Maceió",
+      "Arapiraca",
+      "Palmeira dos Índios",
+      "Rio Largo",
+      "Penedo",
+      "União dos Palmares"
+    ],
+    "AP": [
+      "Macapá",
+      "Santana",
+      "Laranjal do Jari",
+      "Oiapoque",
+      "Mazagão",
+      "Porto Grande"
+    ],
+    "AM": [
+      "Manaus",
+      "Parintins",
+      "Itacoatiara",
+      "Manacapuru",
+      "Coari",
+      "Tefé"
+    ],
+    "BA": [
+      "Salvador",
+      "Feira de Santana",
+      "Vitória da Conquista",
+      "Camaçari",
+      "Juazeiro",
+      "Ilhéus",
+      "Itabuna",
+      "Lauro de Freitas"
+    ],
+    "CE": [
+      "Fortaleza",
+      "Caucaia",
+      "Juazeiro do Norte",
+      "Maracanaú",
+      "Sobral",
+      "Crato"
+    ],
+    "DF": [
+      "Brasília",
+      "Ceilândia",
+      "Taguatinga",
+      "Samambaia",
+      "Planaltina",
+      "Gama"
+    ],
+    "ES": [
+      "Vitória",
+      "Vila Velha",
+      "Serra",
+      "Cariacica",
+      "Linhares",
+      "Colatina"
+    ],
+    "GO": [
+      "Goiânia",
+      "Aparecida de Goiânia",
+      "Anápolis",
+      "Rio Verde",
+      "Luziânia",
+      "Valparaíso de Goiás"
+    ],
+    "MA": [
+      "São Luís",
+      "Imperatriz",
+      "Timon",
+      "Caxias",
+      "Codó",
+      "Balsas"
+    ],
+    "MT": [
+      "Cuiabá",
+      "Várzea Grande",
+      "Rondonópolis",
+      "Sinop",
+      "Tangará da Serra",
+      "Sorriso"
+    ],
+    "MS": [
+      "Campo Grande",
+      "Dourados",
+      "Três Lagoas",
+      "Corumbá",
+      "Ponta Porã",
+      "Naviraí"
+    ],
+    "MG": [
+      "Belo Horizonte",
+      "Uberlândia",
+      "Contagem",
+      "Juiz de Fora",
+      "Betim",
+      "Montes Claros",
+      "Uberaba",
+      "Governador Valadares"
+    ],
+    "PA": [
+      "Belém",
+      "Ananindeua",
+      "Santarém",
+      "Marabá",
+      "Parauapebas",
+      "Castanhal"
+    ],
+    "PB": [
+      "João Pessoa",
+      "Campina Grande",
+      "Santa Rita",
+      "Patos",
+      "Bayeux",
+      "Cabedelo"
+    ],
+    "PR": [
+      "Curitiba",
+      "Londrina",
+      "Maringá",
+      "Ponta Grossa",
+      "Cascavel",
+      "São José dos Pinhais",
+      "Foz do Iguaçu"
+    ],
+    "PE": [
+      "Recife",
+      "Jaboatão dos Guararapes",
+      "Olinda",
+      "Caruaru",
+      "Petrolina",
+      "Paulista"
+    ],
+    "PI": [
+      "Teresina",
+      "Parnaíba",
+      "Picos",
+      "Floriano",
+      "Piripiri",
+      "Campo Maior"
+    ],
+    "RJ": [
+      "Angra dos Reis",
+      "Araruama",
+      "Armação dos Búzios",
+      "Arraial do Cabo",
+      "Barra do Piraí",
+      "Barra Mansa",
+      "Belford Roxo",
+      "Bom Jardim",
+      "Búzios",
+      "Cabo Frio",
+      "Cachoeiras de Macacu",
+      "Campos dos Goytacazes",
+      "Cantagalo",
+      "Carapebus",
+      "Carmo",
+      "Casimiro de Abreu",
+      "Conceição de Macabu",
+      "Duque de Caxias",
+      "Guapimirim",
+      "Iguaba Grande",
+      "Itaboraí",
+      "Itaguaí",
+      "Itaperuna",
+      "Japeri",
+      "Macaé",
+      "Magé",
+      "Mangaratiba",
+      "Maricá",
+      "Mesquita",
+      "Miguel Pereira",
+      "Nilópolis",
+      "Niterói",
+      "Nova Friburgo",
+      "Nova Iguaçu",
+      "Paracambi",
+      "Paraty",
+      "Paty do Alferes",
+      "Petrópolis",
+      "Queimados",
+      "Quissamã",
+      "Resende",
+      "Rio Bonito",
+      "Rio das Ostras",
+      "Rio de Janeiro",
+      "Saquarema",
+      "Seropédica",
+      "Silva Jardim",
+      "São Fidélis",
+      "São Francisco de Itabapoana",
+      "São Gonçalo",
+      "São José do Vale do Rio Preto",
+      "São João de Meriti",
+      "São Pedro da Aldeia",
+      "Tanguá",
+      "Teresópolis",
+      "Três Rios",
+      "Valença",
+      "Vassouras",
+      "Volta Redonda"
+    ],
+    "RN": [
+      "Natal",
+      "Mossoró",
+      "Parnamirim",
+      "Caicó",
+      "Macaíba",
+      "São Gonçalo do Amarante"
+    ],
+    "RS": [
+      "Porto Alegre",
+      "Caxias do Sul",
+      "Pelotas",
+      "Canoas",
+      "Santa Maria",
+      "Novo Hamburgo",
+      "Passo Fundo"
+    ],
+    "RO": [
+      "Porto Velho",
+      "Ji-Paraná",
+      "Ariquemes",
+      "Vilhena",
+      "Cacoal",
+      "Rolim de Moura"
+    ],
+    "RR": [
+      "Boa Vista",
+      "Rorainópolis",
+      "Caracaraí",
+      "Pacaraima",
+      "Bonfim",
+      "Mucajaí"
+    ],
+    "SC": [
+      "Florianópolis",
+      "Joinville",
+      "Blumenau",
+      "São José",
+      "Chapecó",
+      "Itajaí",
+      "Criciúma"
+    ],
+    "SP": [
+      "São Paulo",
+      "Guarulhos",
+      "Campinas",
+      "São Bernardo do Campo",
+      "Santo André",
+      "Osasco",
+      "São José dos Campos",
+      "Sorocaba",
+      "Ribeirão Preto",
+      "Santos"
+    ],
+    "SE": [
+      "Aracaju",
+      "Nossa Senhora do Socorro",
+      "Lagarto",
+      "Itabaiana",
+      "Estância",
+      "São Cristóvão"
+    ],
+    "TO": [
+      "Palmas",
+      "Araguaína",
+      "Gurupi",
+      "Porto Nacional",
+      "Paraíso do Tocantins",
+      "Colinas do Tocantins"
+    ]
+  }
+};

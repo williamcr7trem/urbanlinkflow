@@ -20,12 +20,12 @@ test('combinações de cores do tema cumprem contraste mínimo em texto normal',
     ['#ffffff','#b64934'],['#b8c9de','#172437'],
   ]) assert.ok(wcagContrast(text,bg)>=4.5,`${text}/${bg}: ${wcagContrast(text,bg)}`);
 });
-test('o site não aplica tema escuro nem inverte as camadas do mapa',()=>{
-  const css = read('public/css/identidade.css');
-  assert.match(css,/color-scheme:light/);
+test('tema escuro é aplicado sem inverter as camadas do mapa',()=>{
+  const css = read('public/css/interface.css');
+  assert.match(css,/color-scheme:dark/);
   assert.doesNotMatch(css,/filter\s*:\s*invert\(/);
-  assert.doesNotMatch(read('public/js/app.js'),/function applyTheme\(/);
-  assert.ok(!fs.existsSync(path.join(root,'public/css/tema-v39.css')));
+  assert.match(read('public/js/theme.js'),/root\.dataset\.theme/);
+  assert.doesNotMatch(read('public/js/app.js'),/clearLegacyThemePreference/);
 });
 test('formulários mantêm estrutura V3.6, rótulos sem ícones e navegação sem guias',()=>{
   for(const file of ['login.html','login-motorista.html','login-adm.html','cadastro-cliente.html','cadastro-motorista.html','cadastro-adm.html']){

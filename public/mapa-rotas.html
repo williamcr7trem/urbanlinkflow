@@ -6,16 +6,18 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#1b1642" name="theme-color"/>
 <title>Mapa e rotas — UrbanLink Flow</title>
-<link href="./css/dashboard.css" rel="stylesheet"/>
-<link href="./css/funcionalidades.css" rel="stylesheet"/>
+<link href="./css/dashboard.css?ui=1" rel="stylesheet"/>
+<link href="./css/funcionalidades.css?ui=1" rel="stylesheet"/>
 <link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
-<link href="./css/mapa.css" rel="stylesheet"/>
-<link href="./css/visual.css" rel="stylesheet"/>
-<link href="./css/refino-v37.css?v=3.7" rel="stylesheet"/>
+<link href="./css/mapa.css?ui=1" rel="stylesheet"/>
+<link href="./css/visual.css?ui=1" rel="stylesheet"/>
+<link href="./css/refino-v37.css?v=3.7&amp;ui=1" rel="stylesheet"/>
 
-<link href="./css/identidade.css?v=3.10.1" rel="stylesheet"/><link rel="stylesheet" href="./css/responsividade.css?v=3.10.2"/>
+<link href="./css/identidade.css?v=3.10.1&amp;ui=1" rel="stylesheet"/><link rel="stylesheet" href="./css/responsividade.css?v=3.10.2&amp;ui=1"/>
 <link rel="icon" href="./assets/favicon-32.png?v=3.13" type="image/png" sizes="32x32"/>
 <link rel="icon" href="./assets/favicon.ico?v=3.13" type="image/x-icon"/>
+<script src="./js/theme.js?v=1"></script>
+<link rel="stylesheet" href="./css/interface.css?v=2"/>
 </head>
 <body class="layout-sem-margin" data-page="driver-route" data-role="Motorista,Administrador,Gestor">
 <header class="cabecalho-interno">
@@ -26,7 +28,7 @@
 <a aria-current="page" class="ativo" href="mapa-rotas.html">Mapa e rotas</a>
 <a href="simulacoes.html">Simulações</a>
 </nav>
-<div class="perfil-usuario"><img alt="" class="icone-img" src="./assets/avatar.svg"/><span>Carregando perfil…</span></div>
+<div class="theme-header-actions"><button type="button" class="theme-toggle" aria-label="Alternar modo escuro" aria-pressed="false" title="Alternar tema"><svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13.35A9 9 0 0 1 10.65 3.1 9 9 0 1 0 20.9 13.35Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg></button><div class="perfil-usuario"><img alt="" class="icone-img" src="./assets/avatar.svg"/><span>Carregando perfil…</span></div></div>
 </header>
 <main class="mapa-layout">
 <aside class="mapa-sidebar">
@@ -118,7 +120,7 @@
 </nav>
 </div>
 <div class="footer-bottom"><span>© 2026 UrbanLink Systems. Projeto de desenvolvimento de sistemas.</span><span>Feito para uma logística urbana mais inteligente.</span></div>
-</footer><script defer="" src="./js/app.js?v=3.10.2"></script>
+</footer><script defer="" src="./js/app.js?v=3.10.3"></script>
 <script crossorigin="" defer="" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script defer="" src="./js/mapa.js?v=3.7"></script>
 <dialog aria-labelledby="map-fix-title" class="map-fix-dialog" id="map-fix-location"><form id="map-fix-form" method="dialog"><header><div><span class="mapa-eyebrow">CORREÇÃO DE ENDEREÇO</span><h2 id="map-fix-title">Corrigir localização</h2><p id="map-fix-description">Tente localizar o endereço ou informe o ponto manualmente.</p></div><button aria-label="Fechar" id="map-fix-close" type="button">×</button></header><p class="map-fix-message" id="map-fix-message" role="status">A busca usa o endereço salvo na entrega.</p><button class="mapa-button mapa-button-primary" id="map-fix-auto" type="button">Localizar endereço automaticamente</button><div class="map-fix-coordinates"><label>Latitude<input id="map-fix-lat" max="90" min="-90" placeholder="-22.9068" step="any" type="number"/></label><label>Longitude<input id="map-fix-lon" max="180" min="-180" placeholder="-43.1729" step="any" type="number"/></label></div><p class="mapa-help">Para salvar manualmente, preencha os dois campos com coordenadas verificadas.</p><div class="map-fix-actions"><button class="mapa-button mapa-button-light" id="map-fix-cancel" type="button">Cancelar</button><button class="mapa-button mapa-button-outline" id="map-fix-save" type="submit">Salvar coordenadas</button></div></form></dialog></body>
